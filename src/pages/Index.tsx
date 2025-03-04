@@ -1,7 +1,6 @@
-
 import { companies } from "@/data/companies";
 import CompanyCard from "@/components/CompanyCard";
-import { Cog, Share2, User } from "lucide-react";
+import { Cog, Share2, User, Sparkle } from "lucide-react";
 
 const Index = () => {
   return (
@@ -38,9 +37,19 @@ const Index = () => {
       {/* Main Content */}
       <div className="flex-1 bg-white py-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
-            <h1 className="text-4xl font-bold text-gray-800 mb-3">Covalent Hub</h1>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center justify-center mb-6">
+              <Sparkle className="text-blue-500 h-6 w-6 mr-2" />
+              <span className="bg-gradient-to-r from-blue-500 to-purple-600 text-transparent bg-clip-text font-bold text-lg">
+                INTEGRATION PLATFORM
+              </span>
+              <Sparkle className="text-blue-500 h-6 w-6 ml-2" />
+            </div>
+            <h1 className="text-5xl font-bold mb-5 bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-700 text-transparent bg-clip-text">
+              Covalent Hub
+            </h1>
+            <div className="h-1 w-20 bg-gradient-to-r from-blue-400 to-purple-500 mx-auto mb-6"></div>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
               Explore our ecosystem of integration partners that help build and enhance your business solutions.
             </p>
           </div>
