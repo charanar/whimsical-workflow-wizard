@@ -22,12 +22,12 @@ const CompanyCard = ({ logo: Logo, name, description, tags = [] }: CompanyCardPr
         <div className="h-16 flex items-center justify-center">
           <Logo />
         </div>
-        <h3 className="text-2xl font-semibold mt-2 text-center text-navy-900">{name}</h3>
+        <h3 className="text-lg font-semibold mt-2 text-center text-navy-900">{name}</h3>
       </CardHeader>
       <CardContent className="flex-1 flex flex-col">
-        <p className="text-gray-700 mb-6 flex-1 text-center text-sm">{description}</p>
+        <p className="text-gray-700 mb-4 flex-1 text-center text-sm line-clamp-3">{description}</p>
         <div className="mt-auto flex justify-center">
-          <button className="flex items-center text-blue-600 hover:text-blue-800 transition-colors font-medium">
+          <button className="flex items-center text-blue-600 hover:text-blue-800 transition-colors font-medium text-sm">
             Learn More <ArrowRight className="ml-1 h-4 w-4" />
           </button>
         </div>
@@ -37,7 +37,7 @@ const CompanyCard = ({ logo: Logo, name, description, tags = [] }: CompanyCardPr
               <Badge 
                 key={index} 
                 variant="outline" 
-                className="bg-gray-100 hover:bg-gray-200 text-gray-800 border-gray-200"
+                className="bg-gray-100 hover:bg-gray-200 text-gray-800 border-gray-200 text-xs"
               >
                 {tag.name}
               </Badge>
