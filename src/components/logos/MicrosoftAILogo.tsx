@@ -1,8 +1,8 @@
 
 const MicrosoftAILogo = () => {
   return (
-    <div className="flex justify-center items-center w-12 h-12 rounded-full">
-      <img src="/lovable-uploads/18c64d03-79d0-435b-9ca0-3f9898bfaf2a.png" alt="Microsoft AI Logo" className="w-12 h-12" />
+    <div className="flex justify-center items-center w-16 h-16">
+      <img src="/lovable-uploads/e881b416-db82-4641-975d-432f2f1c0285.png" alt="Microsoft AI Logo" className="w-full h-full object-contain" />
     </div>
   );
 };
