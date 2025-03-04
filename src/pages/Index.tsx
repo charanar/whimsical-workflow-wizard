@@ -57,7 +57,7 @@ const Index = () => {
               </h1>
               <div className="h-1 w-20 bg-gradient-to-r from-[#50a5ff] to-[#434ce8] mb-6"></div>
               <p className="text-xl text-[#49495b] max-w-2xl leading-relaxed">
-                Explore our ecosystem of integration partners that help build and enhance your business solutions.
+                Explore our ecosystem of powerful integrations to streamline your IFS workflows and maximize productivity across your business operations.
               </p>
             </div>
             
