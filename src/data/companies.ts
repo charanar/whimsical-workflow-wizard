@@ -11,6 +11,7 @@ export interface Company {
   logo: React.ComponentType;
   name: string;
   description: string;
+  active: boolean;
   tags?: { name: string }[];
 }
 
@@ -20,6 +21,7 @@ export const companies: Company[] = [
     logo: PandaDocLogo,
     name: "PandaDoc",
     description: "Simplify e-signature process with dynamic templates. Pre-fill contracts with IFS data.",
+    active: true,
     tags: [{ name: "Documents" }, { name: "Signatures" }]
   },
   {
@@ -27,6 +29,7 @@ export const companies: Company[] = [
     logo: MicrosoftAILogo,
     name: "Microsoft AI",
     description: "Convert emails and PDFs to Supplier Invoices in IFS using Microsoft AI.",
+    active: true,
     tags: [{ name: "AI" }, { name: "Automation" }]
   },
   {
@@ -34,6 +37,7 @@ export const companies: Company[] = [
     logo: MicrosoftExchangeLogo,
     name: "Microsoft Exchange",
     description: "Seamless synchronisation of emails with IFS for better tracking of correspondences.",
+    active: true,
     tags: [{ name: "Email" }, { name: "Communication" }]
   },
   {
@@ -41,6 +45,7 @@ export const companies: Company[] = [
     logo: HubSpotLogo,
     name: "HubSpot",
     description: "Synchronize CRM data, ensuring smooth coordination and improved efficiency.",
+    active: false,
     tags: [{ name: "CRM" }, { name: "Marketing" }]
   },
   {
@@ -48,6 +53,7 @@ export const companies: Company[] = [
     logo: MicrosoftOutlookLogo,
     name: "Microsoft Outlook",
     description: "Keep service technicians organised with IFS Work Orders synchronised with Outlook calendars.",
+    active: false,
     tags: [{ name: "Productivity" }, { name: "Integration" }]
   },
   {
@@ -55,6 +61,7 @@ export const companies: Company[] = [
     logo: SalesforceLogo,
     name: "Salesforce",
     description: "Improve customer insights with bi-directional integration between Salesforce and IFS.",
+    active: false,
     tags: [{ name: "CRM" }, { name: "Customer" }]
   }
 ];

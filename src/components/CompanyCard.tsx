@@ -12,23 +12,24 @@ interface CompanyCardProps {
   logo: React.ComponentType;
   name: string;
   description: string;
+  active: boolean;
   tags?: Tag[];
 }
 
-const CompanyCard = ({ logo: Logo, name, description, tags = [] }: CompanyCardProps) => {
+const CompanyCard = ({ logo: Logo, name, description, active, tags = [] }: CompanyCardProps) => {
   return (
-    <Card className="h-full flex flex-col overflow-hidden hover:shadow-md transition-shadow duration-300 bg-white rounded-xl border border-gray-100">
+    <Card className={`h-full flex flex-col overflow-hidden hover:shadow-md transition-shadow duration-300 rounded-xl border ${active ? 'bg-white border-gray-100' : 'bg-gray-100 border-gray-200'}`}>
       <CardHeader className="pb-2 flex flex-col items-center">
-        <div className="h-20 flex items-center justify-center">
+        <div className={`h-20 flex items-center justify-center ${!active ? 'opacity-60 grayscale' : ''}`}>
           <Logo />
         </div>
-        <h3 className="text-lg font-semibold mt-2 text-center text-gray-800">{name}</h3>
+        <h3 className={`text-lg font-semibold mt-2 text-center ${active ? 'text-gray-800' : 'text-gray-600'}`}>{name}</h3>
       </CardHeader>
       <CardContent className="flex-1 flex flex-col px-4 pb-4">
-        <p className="text-gray-600 mb-4 flex-1 text-center text-sm line-clamp-2">{description}</p>
+        <p className={`mb-4 flex-1 text-center text-sm line-clamp-2 ${active ? 'text-gray-600' : 'text-gray-500'}`}>{description}</p>
         <div className="mt-auto flex justify-center">
-          <button className="flex items-center text-blue-600 hover:text-blue-800 transition-colors font-medium text-sm">
-            Learn More <ArrowRight className="ml-1 h-4 w-4" />
+          <button className={`flex items-center ${active ? 'text-blue-600 hover:text-blue-800' : 'text-gray-500 hover:text-gray-700'} transition-colors font-medium text-sm`}>
+            {active ? "Access Integration" : "Learn More"} <ArrowRight className="ml-1 h-4 w-4" />
           </button>
         </div>
         {tags && tags.length > 0 && (
@@ -37,7 +38,7 @@ const CompanyCard = ({ logo: Logo, name, description, tags = [] }: CompanyCardPr
               <Badge 
                 key={index} 
                 variant="outline" 
-                className="bg-gray-100 hover:bg-gray-200 text-gray-700 border-gray-200 text-xs"
+                className={`${active ? 'bg-gray-100 hover:bg-gray-200 text-gray-700' : 'bg-gray-200 hover:bg-gray-300 text-gray-600'} border-gray-200 text-xs`}
               >
                 {tag.name}
               </Badge>

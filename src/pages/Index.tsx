@@ -11,7 +11,7 @@ const Index = () => {
         {/* Top logo */}
         <div className="mb-16">
           <img 
-            src="/lovable-uploads/8403583f-b377-486e-a158-58bd917e9e77.png" 
+            src="/lovable-uploads/e91fd30d-9816-4f0e-bc08-82343c1a82f6.png" 
             alt="Logo" 
             className="w-8 h-8"
           />
@@ -53,6 +53,7 @@ const Index = () => {
                 name={company.name}
                 description={company.description}
                 tags={company.tags}
+                active={company.active}
               />
             ))}
           </div>
