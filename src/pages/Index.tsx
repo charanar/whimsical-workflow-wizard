@@ -1,19 +1,36 @@
 
 import { companies } from "@/data/companies";
 import CompanyCard from "@/components/CompanyCard";
-import { Cog, Share2 } from "lucide-react";
+import { Cog, Share2, User } from "lucide-react";
 
 const Index = () => {
   return (
     <div className="min-h-screen flex">
       {/* Sidebar */}
-      <div className="w-16 bg-white/10 backdrop-blur-sm flex flex-col items-center py-8 border-r border-white/20">
-        <div className="mt-auto space-y-6">
+      <div className="w-16 bg-[#262f3d]/90 backdrop-blur-sm flex flex-col items-center py-8 border-r border-white/10">
+        {/* Top logo */}
+        <div className="mb-16">
+          <img 
+            src="/lovable-uploads/8403583f-b377-486e-a158-58bd917e9e77.png" 
+            alt="Logo" 
+            className="w-8 h-8"
+          />
+        </div>
+        
+        {/* Middle icons */}
+        <div className="flex-1 flex flex-col items-center space-y-8">
           <button className="h-10 w-10 rounded-full flex items-center justify-center text-white/70 hover:text-white hover:bg-white/10 transition-colors">
             <Share2 size={20} />
           </button>
           <button className="h-10 w-10 rounded-full flex items-center justify-center text-white/70 hover:text-white hover:bg-white/10 transition-colors">
             <Cog size={20} />
+          </button>
+        </div>
+        
+        {/* Bottom user icon */}
+        <div className="mt-auto">
+          <button className="h-10 w-10 rounded-full flex items-center justify-center text-white/70 hover:text-white hover:bg-white/10 transition-colors">
+            <User size={20} />
           </button>
         </div>
       </div>
