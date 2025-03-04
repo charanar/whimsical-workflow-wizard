@@ -44,7 +44,7 @@ export const companies: Company[] = [
     id: "4",
     logo: HubSpotLogo,
     name: "HubSpot",
-    description: "Synchronize CRM data, ensuring smooth coordination and improved efficiency.",
+    description: "Synchronise CRM data, ensuring smooth coordination and improved efficiency.",
     active: false,
     tags: [{ name: "CRM" }, { name: "Marketing" }]
   },
