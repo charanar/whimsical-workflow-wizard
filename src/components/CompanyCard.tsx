@@ -29,26 +29,33 @@ const CompanyCard = ({ logo: Logo, name, description, active, tags = [] }: Compa
         </div>
         <h3 className={`text-lg font-semibold mt-2 text-center ${active ? 'text-[#3f404d]' : 'text-[#8e90a2]'}`}>{name}</h3>
       </CardHeader>
-      <CardContent className="flex-1 flex flex-col px-4 pb-4">
+      <CardContent className="flex-1 flex flex-col px-4 pb-6">
         <p className={`mb-4 flex-1 text-center text-sm line-clamp-2 ${active ? 'text-[#5a5b6f]' : 'text-[#b6b7c3]'}`}>{description}</p>
-        <div className="mt-auto flex justify-end">
-          <button className={`flex items-center ${active ? 'text-[#1963ff] hover:text-[#0a47eb]' : 'text-gray-500 hover:text-gray-700'} transition-colors font-medium text-sm`}>
-            {active ? "Access Integration" : "Learn More"} <ArrowRight className="ml-1 h-4 w-4" />
-          </button>
-        </div>
-        {tags && tags.length > 0 && (
-          <div className="flex flex-wrap gap-2 mt-4 justify-center">
-            {tags.map((tag, index) => (
-              <Badge 
-                key={index} 
-                variant="outline" 
-                className={`${active ? 'bg-[#edf6ff] hover:bg-[#d7e9ff] text-[#0f3abe]' : 'bg-gray-200 hover:bg-gray-300 text-gray-600'} border-gray-200 text-xs`}
-              >
-                {tag.name}
-              </Badge>
-            ))}
+        
+        {/* Create separation between content and footer elements */}
+        <div className="mt-auto space-y-4">
+          {/* Tags section - only show if there are tags */}
+          {tags && tags.length > 0 && (
+            <div className="flex flex-wrap gap-2 justify-center">
+              {tags.map((tag, index) => (
+                <Badge 
+                  key={index} 
+                  variant="outline" 
+                  className={`${active ? 'bg-[#edf6ff] hover:bg-[#d7e9ff] text-[#0f3abe]' : 'bg-gray-200 hover:bg-gray-300 text-gray-600'} border-gray-200 text-xs`}
+                >
+                  {tag.name}
+                </Badge>
+              ))}
+            </div>
+          )}
+          
+          {/* Call to action button - moved to the bottom with clear separation */}
+          <div className="flex justify-end pt-2">
+            <button className={`flex items-center ${active ? 'text-[#1963ff] hover:text-[#0a47eb]' : 'text-gray-500 hover:text-gray-700'} transition-colors font-medium text-sm`}>
+              {active ? "Access Integration" : "Learn More"} <ArrowRight className="ml-1 h-4 w-4" />
+            </button>
           </div>
-        )}
+        </div>
       </CardContent>
     </Card>
   );
