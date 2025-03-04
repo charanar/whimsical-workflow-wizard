@@ -18,7 +18,11 @@ interface CompanyCardProps {
 
 const CompanyCard = ({ logo: Logo, name, description, active, tags = [] }: CompanyCardProps) => {
   return (
-    <Card className={`h-full flex flex-col overflow-hidden hover:shadow-md transition-shadow duration-300 rounded-xl border ${active ? 'bg-white border-gray-200' : 'bg-gray-100 border-gray-300'}`}>
+    <Card className={`h-full flex flex-col overflow-hidden hover:shadow-md transition-shadow duration-300 rounded-xl 
+      ${active 
+        ? 'bg-white border-2 border-blue-500 border-opacity-70 shadow-sm' 
+        : 'bg-gray-100 border border-gray-300'}`}>
+      <div className={`w-full h-1 ${active ? 'bg-gradient-to-r from-blue-400 to-purple-500' : 'bg-gray-200'}`}></div>
       <CardHeader className="pb-2 flex flex-col items-center">
         <div className={`h-20 flex items-center justify-center ${!active ? 'opacity-60 grayscale' : ''}`}>
           <Logo />
