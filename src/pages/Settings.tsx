@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "sonner";
@@ -9,12 +8,12 @@ import IFSProviderSection from "@/components/settings/IFSProviderSection";
 import PlaceholderSection from "@/components/settings/PlaceholderSection";
 import { Connection } from "@/components/settings/ConnectionsTable";
 
-// Mock data for IFS Access Provider connections with correct endpoint pattern
+// Mock data for IFS Access Provider connections with corrected endpoint pattern
 const initialConnections = [
-  { id: 1, endpoint: "https://newifsendpoint.com/service1", username: "admin_user", integration: "Pandadoc", status: "active", condition: "online" },
-  { id: 2, endpoint: "https://newifsendpoint.com/connect", username: "service_account", integration: "CompanyHouse", status: "active", condition: "online" },
-  { id: 3, endpoint: "https://newifsendpoint.com/hooks", username: "api_user", integration: "SendInBlue", status: "deactivated", condition: "offline" },
-  { id: 4, endpoint: "https://newifsendpoint.com/maps", username: "maps_service", integration: "GoogleMap", status: "active", condition: "online" },
+  { id: 1, endpoint: "www.newifsendpoint.com", username: "admin_user", integration: "Pandadoc", status: "active", condition: "online" },
+  { id: 2, endpoint: "www.newifsendpoint.com", username: "service_account", integration: "CompanyHouse", status: "active", condition: "online" },
+  { id: 3, endpoint: "www.newifsendpoint.com", username: "api_user", integration: "SendInBlue", status: "deactivated", condition: "offline" },
+  { id: 4, endpoint: "www.newifsendpoint.com", username: "maps_service", integration: "GoogleMap", status: "active", condition: "online" },
 ];
 
 const Settings = () => {
@@ -43,7 +42,7 @@ const Settings = () => {
     const newId = Math.max(...connections.map(c => c.id), 0) + 1;
     const newConnection = {
       id: newId,
-      endpoint: "https://newifsendpoint.com/newconnection",
+      endpoint: "www.newifsendpoint.com",
       username: "new_user",
       integration: "New Integration",
       status: "active",
