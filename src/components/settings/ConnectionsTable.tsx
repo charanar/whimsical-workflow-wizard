@@ -27,7 +27,7 @@ interface ConnectionsTableProps {
 
 const ConnectionsTable = ({ connections, onTestConnection, onDeleteConnection }: ConnectionsTableProps) => {
   return (
-    <Card className="border border-gray-200 shadow-sm rounded-md overflow-hidden w-full max-w-5xl mx-auto">
+    <Card className="border border-gray-200 shadow-sm rounded-md overflow-hidden w-full">
       <div className="border-b border-gray-200">
         <div className="grid grid-cols-5 bg-white text-gray-500 text-sm p-4">
           <div className="px-3 font-medium">IFS ENDPOINT</div>
