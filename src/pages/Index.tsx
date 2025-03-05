@@ -39,9 +39,11 @@ const Index = () => {
           <button className="h-10 w-10 rounded-full flex items-center justify-center text-gray-500 hover:text-gray-700 hover:bg-gray-100 transition-colors">
             <Share2 size={20} />
           </button>
-          <button className="h-10 w-10 rounded-full flex items-center justify-center text-gray-500 hover:text-gray-700 hover:bg-gray-100 transition-colors">
-            <Cog size={20} />
-          </button>
+          <Link to="/settings">
+            <button className="h-10 w-10 rounded-full flex items-center justify-center text-gray-500 hover:text-gray-700 hover:bg-gray-100 transition-colors">
+              <Cog size={20} />
+            </button>
+          </Link>
         </div>
         
         {/* Bottom user icon with login link */}
