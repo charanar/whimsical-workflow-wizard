@@ -1,4 +1,3 @@
-
 import { Clock, Settings } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -133,9 +132,9 @@ const HistoryLogsConfigSection = () => {
             </div>
           </div>
 
-          <div className="mt-8">
+          <div className="mt-8 flex justify-end">
             <Button 
-              className="w-full bg-[#062f4b] hover:bg-[#062f4b]/90 text-white"
+              className="bg-[#062f4b] hover:bg-[#062f4b]/90 text-white rounded-full px-8"
               onClick={handleSave}
             >
               Save
@@ -148,4 +147,3 @@ const HistoryLogsConfigSection = () => {
 };
 
 export default HistoryLogsConfigSection;
-
