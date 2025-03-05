@@ -13,6 +13,7 @@ import EnableIntegrationSection from "@/components/settings/EnableIntegrationSec
 import PlaceholderSection from "@/components/settings/PlaceholderSection";
 import PortalAdminUsersSection from "@/components/settings/PortalAdminUsersSection";
 import PortalAccessLevelSection from "@/components/settings/PortalAccessLevelSection";
+import PortalAccessManagementSection from "@/components/settings/PortalAccessManagementSection";
 import { Connection } from "@/components/settings/ConnectionsTable";
 import { AuditRecord } from "@/components/settings/HistoryAuditsTable";
 
@@ -107,6 +108,8 @@ const Settings = () => {
             <PortalAdminUsersSection />
           ) : activeCategory === "portal-access-level" ? (
             <PortalAccessLevelSection />
+          ) : activeCategory === "portal-access-management" ? (
+            <PortalAccessManagementSection />
           ) : (
             <PlaceholderSection />
           )}
