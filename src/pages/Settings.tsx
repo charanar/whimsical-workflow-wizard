@@ -65,8 +65,8 @@ const Settings = () => {
       />
 
       {/* Main content area */}
-      <div className="flex-1 bg-slate-50">
-        <div className="p-4 max-w-full">
+      <div className="flex-1 bg-slate-50 flex justify-center">
+        <div className="p-4 w-full max-w-5xl">
           {/* Back button */}
           <BackButton onClick={handleBackClick} />
           

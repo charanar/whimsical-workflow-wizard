@@ -13,7 +13,7 @@ interface IFSProviderSectionProps {
 
 const IFSProviderSection = ({ connections, onAddConnection, onTestConnection, onDeleteConnection }: IFSProviderSectionProps) => {
   return (
-    <div>
+    <div className="max-w-5xl mx-auto">
       <IFSProviderHeader onAddConnection={onAddConnection} />
       
       <ConnectionsTable 
