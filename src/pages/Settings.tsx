@@ -237,7 +237,7 @@ const Settings = () => {
               </div>
 
               <Card className="border-0 shadow-lg rounded-xl overflow-hidden">
-                <div className="grid grid-cols-5 bg-[#1963ff] text-white font-semibold p-4 text-sm">
+                <div className="grid grid-cols-5 bg-gradient-to-r from-[#1963ff] to-[#0047ab] text-white font-medium p-4 text-sm">
                   <div className="px-3 col-span-2">IFS ENDPOINT</div>
                   <div className="px-3">USERNAME</div>
                   <div className="px-3">PASSWORD</div>
