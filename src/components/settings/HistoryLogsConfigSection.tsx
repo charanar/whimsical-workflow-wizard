@@ -5,6 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Select } from "@radix-ui/react-select";
 import { toast } from "sonner";
+import { Separator } from "@/components/ui/separator";
 
 const HistoryLogsConfigSection = () => {
   const handleSave = () => {
@@ -89,9 +90,9 @@ const HistoryLogsConfigSection = () => {
                 <div>
                   <label className="text-gray-500 text-xs">Current Schedule:</label>
                   <div className="mt-1 h-4 flex items-center space-x-1">
-                    <div className="h-2 w-2 bg-yellow-400 rounded-full"></div>
-                    <div className="h-2 w-2 bg-yellow-400 rounded-full"></div>
-                    <div className="h-2 w-2 bg-yellow-400 rounded-full"></div>
+                    <div className="h-2 w-2 bg-[#b9dbff] rounded-full"></div>
+                    <div className="h-2 w-2 bg-[#b9dbff] rounded-full"></div>
+                    <div className="h-2 w-2 bg-[#b9dbff] rounded-full"></div>
                   </div>
                 </div>
               </div>
@@ -102,6 +103,7 @@ const HistoryLogsConfigSection = () => {
             </div>
             <div className="md:col-span-2">
               <div className="space-y-4">
+                <Separator className="my-4" />
                 <div>
                   <label className="text-gray-500 text-xs">Every:</label>
                   <div className="relative mt-1">
@@ -122,9 +124,9 @@ const HistoryLogsConfigSection = () => {
                 <div>
                   <label className="text-gray-500 text-xs">Current Schedule:</label>
                   <div className="mt-1 h-4 flex items-center space-x-1">
-                    <div className="h-2 w-2 bg-yellow-400 rounded-full"></div>
-                    <div className="h-2 w-2 bg-yellow-400 rounded-full"></div>
-                    <div className="h-2 w-2 bg-yellow-300 rounded-full"></div>
+                    <div className="h-2 w-2 bg-[#b9dbff] rounded-full"></div>
+                    <div className="h-2 w-2 bg-[#b9dbff] rounded-full"></div>
+                    <div className="h-2 w-2 bg-[#b9dbff] rounded-full"></div>
                   </div>
                 </div>
               </div>
@@ -146,3 +148,4 @@ const HistoryLogsConfigSection = () => {
 };
 
 export default HistoryLogsConfigSection;
+
