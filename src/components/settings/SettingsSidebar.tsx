@@ -11,7 +11,7 @@ const SettingsSidebar = ({ activeCategory, setActiveCategory }: SettingsSidebarP
   return (
     <div className="w-52 border-r border-gray-100 bg-gray-50">
       <div className="p-4">
-        <h2 className="text-xl font-semibold mb-4 text-[#1963ff]">Settings</h2>
+        <h2 className="text-xl font-semibold mb-4 text-[#353acd]">Settings</h2>
         
         {/* General Section */}
         <div className="mb-4">
