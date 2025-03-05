@@ -1,5 +1,5 @@
 
-import { Mail, Settings } from "lucide-react";
+import { Mail, Settings, Plus } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -67,7 +67,7 @@ const EmailAlertsSection = ({ showConfigView = false }: EmailAlertsSectionProps)
               onClick={handleCreateAlert}
               className="bg-[#062f4b] hover:bg-[#062f4b]/90 text-white"
             >
-              Create Alert
+              <Plus size={16} className="mr-1.5" /> Create Alert
             </Button>
           </div>
 
@@ -169,7 +169,7 @@ const EmailAlertsSection = ({ showConfigView = false }: EmailAlertsSectionProps)
                   className="bg-[#062f4b] hover:bg-[#062f4b]/90 text-white rounded-full px-32"
                   onClick={handleSave}
                 >
-                  Save
+                  <Plus size={16} className="mr-1.5" /> Save
                 </Button>
               </div>
             </CardContent>
