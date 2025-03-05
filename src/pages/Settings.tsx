@@ -55,18 +55,18 @@ const Settings = () => {
 
   return (
     <div className="min-h-screen flex bg-white">
-      {/* Main Sidebar */}
+      {/* Section 1: Main Sidebar with gear, share and logo icons */}
       <MainSidebar />
       
-      {/* Settings Sidebar */}
+      {/* Section 2: Settings Sidebar */}
       <SettingsSidebar 
         activeCategory={activeCategory} 
         setActiveCategory={setActiveCategory} 
       />
 
-      {/* Main content area */}
+      {/* Section 3: IFS Access Provider content area - reduced padding */}
       <div className="flex-1 bg-slate-50">
-        <div className="p-4 pl-8">
+        <div className="p-2 pl-4"> {/* Reduced padding here from p-4 pl-8 to p-2 pl-4 */}
           {/* Back button */}
           <BackButton onClick={handleBackClick} />
           
