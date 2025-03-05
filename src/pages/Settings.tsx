@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "sonner";
@@ -10,6 +11,7 @@ import HistoryLogsConfigSection from "@/components/settings/HistoryLogsConfigSec
 import EmailAlertsSection from "@/components/settings/EmailAlertsSection";
 import EnableIntegrationSection from "@/components/settings/EnableIntegrationSection";
 import PlaceholderSection from "@/components/settings/PlaceholderSection";
+import PortalAdminUsersSection from "@/components/settings/PortalAdminUsersSection";
 import { Connection } from "@/components/settings/ConnectionsTable";
 import { AuditRecord } from "@/components/settings/HistoryAuditsTable";
 
@@ -100,6 +102,8 @@ const Settings = () => {
             <EmailAlertsSection showConfigView={true} />
           ) : activeCategory === "enable-integration" ? (
             <EnableIntegrationSection />
+          ) : activeCategory === "portal-admin-users" ? (
+            <PortalAdminUsersSection />
           ) : (
             <PlaceholderSection />
           )}

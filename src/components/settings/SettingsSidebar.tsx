@@ -125,8 +125,9 @@ const SettingsSidebar = ({ activeCategory, setActiveCategory }: SettingsSidebarP
               <li>
                 <a 
                   href="#" 
-                  onClick={(e) => e.preventDefault()}
-                  className="flex items-center text-xs text-gray-700 py-1.5 px-2 rounded hover:bg-gray-100 transition-colors duration-150 group"
+                  onClick={(e) => { e.preventDefault(); setActiveCategory("portal-admin-users"); }}
+                  className={`flex items-center text-xs py-1.5 px-2 rounded transition-colors duration-150 group
+                    ${activeCategory === "portal-admin-users" ? "bg-gray-200 text-[#1963ff] font-medium" : "text-gray-700 hover:bg-gray-100"}`}
                 >
                   <span className="mr-1 text-[#1963ff]">•</span>
                   <span>Portal Admin Users</span>
@@ -136,8 +137,9 @@ const SettingsSidebar = ({ activeCategory, setActiveCategory }: SettingsSidebarP
               <li>
                 <a 
                   href="#" 
-                  onClick={(e) => e.preventDefault()}
-                  className="flex items-center text-xs text-gray-700 py-1.5 px-2 rounded hover:bg-gray-100 transition-colors duration-150 group"
+                  onClick={(e) => { e.preventDefault(); setActiveCategory("portal-access-level"); }}
+                  className={`flex items-center text-xs text-gray-700 py-1.5 px-2 rounded hover:bg-gray-100 transition-colors duration-150 group
+                    ${activeCategory === "portal-access-level" ? "bg-gray-200 text-[#1963ff] font-medium" : ""}`}
                 >
                   <span className="mr-1 text-[#1963ff]">•</span>
                   <span>Portal Access Level</span>
@@ -147,8 +149,9 @@ const SettingsSidebar = ({ activeCategory, setActiveCategory }: SettingsSidebarP
               <li>
                 <a 
                   href="#" 
-                  onClick={(e) => e.preventDefault()}
-                  className="flex items-center text-xs text-gray-700 py-1.5 px-2 rounded hover:bg-gray-100 transition-colors duration-150 group"
+                  onClick={(e) => { e.preventDefault(); setActiveCategory("portal-access-management"); }}
+                  className={`flex items-center text-xs text-gray-700 py-1.5 px-2 rounded hover:bg-gray-100 transition-colors duration-150 group
+                    ${activeCategory === "portal-access-management" ? "bg-gray-200 text-[#1963ff] font-medium" : ""}`}
                 >
                   <span className="mr-1 text-[#1963ff]">•</span>
                   <span>Portal Access Management</span>
