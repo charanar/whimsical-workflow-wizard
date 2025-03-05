@@ -1,4 +1,3 @@
-
 import { Mail } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import {
@@ -41,7 +40,12 @@ const EmailAlertsSection = () => {
               </TableRow>
             </TableHeader>
             <TableBody>
-              {/* Table is empty as per requirement */}
+              {/* The table is empty but we keep the structure visible */}
+              <TableRow className="h-16 border-b border-gray-200">
+                <TableCell colSpan={2} className="text-center text-gray-500 text-sm">
+                  No alerts configured
+                </TableCell>
+              </TableRow>
             </TableBody>
           </Table>
         </CardContent>
