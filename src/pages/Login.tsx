@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Eye, EyeOff, LayoutDashboard, MonitorSmartphone, Users, Puzzle, Globe, BarChart3, Folder, FileText } from 'lucide-react';
@@ -195,11 +194,6 @@ const Login = () => {
             Streamline your IFS workflows
           </p>
         </div>
-      </div>
-
-      <div className="mt-8 text-center relative z-10">
-        <p className="text-sm text-[#777986]">Covalent Hub © {new Date().getFullYear()}</p>
-        <p className="text-sm text-[#777986]">Streamline your IFS workflows</p>
       </div>
     </div>
   );

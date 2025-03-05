@@ -1,13 +1,14 @@
 
 import { companies } from "@/data/companies";
 import CompanyCard from "@/components/CompanyCard";
-import { Cog, Search, Share2, User } from "lucide-react";
+import { ArrowLeft, Cog, Search, Share2, User } from "lucide-react";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 
 const Index = () => {
   const [searchQuery, setSearchQuery] = useState("");
+  const navigate = useNavigate();
 
   const filteredCompanies = searchQuery 
     ? companies.filter(company => 
@@ -16,6 +17,10 @@ const Index = () => {
         company.tags?.some(tag => tag.name.toLowerCase().includes(searchQuery.toLowerCase()))
       )
     : companies;
+
+  const handleBackClick = () => {
+    navigate('/login');
+  };
 
   return (
     <div className="min-h-screen flex bg-white">
@@ -53,9 +58,18 @@ const Index = () => {
       {/* Main Content */}
       <div className="flex-1 bg-white py-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
-          {/* Header with search widget and login button */}
+          {/* Header with search widget and back button */}
           <div className="flex flex-col md:flex-row md:items-center justify-between mb-16">
             <div className="text-left mb-8 md:mb-0">
+              {/* Back button added above the title, aligned with the logo */}
+              <button 
+                onClick={handleBackClick} 
+                className="mb-4 flex items-center text-[#1963ff] hover:text-[#0e50dd] transition-colors"
+              >
+                <ArrowLeft className="mr-2" size={20} />
+                <span>Back to Login</span>
+              </button>
+              
               <h1 className="text-5xl font-bold mb-5 bg-gradient-to-r from-[#1963ff] via-[#353acd] to-[#2e34a5] text-transparent bg-clip-text">
                 Covalent Hub
               </h1>
