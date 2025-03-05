@@ -75,9 +75,9 @@ const EmailAlertsSection = ({ showConfigView = false }: EmailAlertsSectionProps)
             <CardContent className="p-0">
               <Table>
                 <TableHeader>
-                  <TableRow className="bg-[#b9dbff]">
-                    <TableHead className="font-medium text-gray-700 text-xs py-3">APPLICATION NAME</TableHead>
-                    <TableHead className="font-medium text-gray-700 text-xs py-3">ALERT NAME</TableHead>
+                  <TableRow className="bg-[#49495b]">
+                    <TableHead className="font-medium text-white text-xs py-3">APPLICATION NAME</TableHead>
+                    <TableHead className="font-medium text-white text-xs py-3">ALERT NAME</TableHead>
                   </TableRow>
                 </TableHeader>
                 <TableBody>

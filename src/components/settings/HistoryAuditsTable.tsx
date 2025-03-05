@@ -29,7 +29,7 @@ const HistoryAuditsTable = ({ auditRecords, onViewDetails }: HistoryAuditsTableP
   return (
     <Card className="border border-gray-200 shadow-sm rounded-md overflow-hidden w-full">
       <div className="border-b border-gray-200">
-        <div className="grid grid-cols-7 bg-[#b9dbff] text-gray-500 text-xs p-3">
+        <div className="grid grid-cols-7 bg-[#49495b] text-white text-xs p-3">
           <div className="px-3 font-medium">ID</div>
           <div className="px-3 font-medium">OPERATION TYPE</div>
           <div className="px-3 font-medium">INTEGRATION SCREEN</div>
