@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
+import { toast } from "sonner";
 
 // Mock data for IFS Access Provider connections
 const initialConnections = [
@@ -18,7 +19,7 @@ const initialConnections = [
 const Settings = () => {
   const navigate = useNavigate();
   // Track the active category for highlighting in the sidebar
-  const [activeCategory, setActiveCategory] = useState("general");
+  const [activeCategory, setActiveCategory] = useState("ifs-provider");
   // For IFS connections data
   const [connections, setConnections] = useState(initialConnections);
 
@@ -28,11 +29,13 @@ const Settings = () => {
 
   const handleTestConnection = (id) => {
     console.log(`Testing connection ${id}`);
+    toast.success(`Connection ${id} tested successfully!`);
     // In a real app, this would test the connection and provide feedback
   };
 
   const handleDeleteConnection = (id) => {
     setConnections(connections.filter(conn => conn.id !== id));
+    toast.info(`Connection ${id} deleted`);
   };
 
   const handleAddConnection = () => {
@@ -44,6 +47,7 @@ const Settings = () => {
       integration: "New Integration"
     };
     setConnections([...connections, newConnection]);
+    toast.success("New connection added");
   };
 
   return (
@@ -59,7 +63,7 @@ const Settings = () => {
           />
         </div>
         
-        {/* Middle icons - update to use Share2 and Cog from lucide-react */}
+        {/* Middle icons - using Share2 and Cog from lucide-react */}
         <div className="flex-1 flex flex-col items-center space-y-8">
           <Link to="/">
             <button className="h-10 w-10 rounded-full flex items-center justify-center text-gray-500 hover:text-gray-700 hover:bg-gray-100 transition-colors">
@@ -87,7 +91,7 @@ const Settings = () => {
       {/* Settings sidebar */}
       <div className="w-64 border-r border-gray-100 bg-gray-50">
         <div className="p-6">
-          <h2 className="text-xl font-semibold mb-6">Settings</h2>
+          <h2 className="text-xl font-semibold mb-6 text-[#1963ff]">Settings</h2>
           
           {/* General Section */}
           <div className="mb-8">
@@ -112,42 +116,42 @@ const Settings = () => {
                       onClick={(e) => { e.preventDefault(); setActiveCategory("ifs-provider"); }}
                       className="flex items-center text-sm text-gray-700 py-1.5 px-2 rounded hover:bg-gray-100 transition-colors duration-150 group"
                     >
-                      <span className="mr-1">•</span>
+                      <span className="mr-1 text-[#1963ff]">•</span>
                       <span>IFS Access provider</span>
                       <ExternalLink className="ml-auto h-3 w-3 opacity-0 group-hover:opacity-100 transition-opacity" />
                     </a>
                   </li>
                   <li>
                     <a href="#" className="flex items-center text-sm text-gray-700 py-1.5 px-2 rounded hover:bg-gray-100 transition-colors duration-150 group">
-                      <span className="mr-1">•</span>
+                      <span className="mr-1 text-[#1963ff]">•</span>
                       <span>History Audits</span>
                       <ExternalLink className="ml-auto h-3 w-3 opacity-0 group-hover:opacity-100 transition-opacity" />
                     </a>
                   </li>
                   <li>
                     <a href="#" className="flex items-center text-sm text-gray-700 py-1.5 px-2 rounded hover:bg-gray-100 transition-colors duration-150 group">
-                      <span className="mr-1">•</span>
+                      <span className="mr-1 text-[#1963ff]">•</span>
                       <span>History Logs Configuration</span>
                       <ExternalLink className="ml-auto h-3 w-3 opacity-0 group-hover:opacity-100 transition-opacity" />
                     </a>
                   </li>
                   <li>
                     <a href="#" className="flex items-center text-sm text-gray-700 py-1.5 px-2 rounded hover:bg-gray-100 transition-colors duration-150 group">
-                      <span className="mr-1">•</span>
+                      <span className="mr-1 text-[#1963ff]">•</span>
                       <span>Email Alerts</span>
                       <ExternalLink className="ml-auto h-3 w-3 opacity-0 group-hover:opacity-100 transition-opacity" />
                     </a>
                   </li>
                   <li>
                     <a href="#" className="flex items-center text-sm text-gray-700 py-1.5 px-2 rounded hover:bg-gray-100 transition-colors duration-150 group">
-                      <span className="mr-1">•</span>
+                      <span className="mr-1 text-[#1963ff]">•</span>
                       <span>Email Alert Configuration</span>
                       <ExternalLink className="ml-auto h-3 w-3 opacity-0 group-hover:opacity-100 transition-opacity" />
                     </a>
                   </li>
                   <li>
                     <a href="#" className="flex items-center text-sm text-gray-700 py-1.5 px-2 rounded hover:bg-gray-100 transition-colors duration-150 group">
-                      <span className="mr-1">•</span>
+                      <span className="mr-1 text-[#1963ff]">•</span>
                       <span>Enable Integration</span>
                       <ExternalLink className="ml-auto h-3 w-3 opacity-0 group-hover:opacity-100 transition-opacity" />
                     </a>
@@ -176,21 +180,21 @@ const Settings = () => {
                 <ul className="space-y-2 py-1">
                   <li>
                     <a href="#" className="flex items-center text-sm text-gray-700 py-1.5 px-2 rounded hover:bg-gray-100 transition-colors duration-150 group">
-                      <span className="mr-1">•</span>
+                      <span className="mr-1 text-[#1963ff]">•</span>
                       <span>Portal Admin Users</span>
                       <ExternalLink className="ml-auto h-3 w-3 opacity-0 group-hover:opacity-100 transition-opacity" />
                     </a>
                   </li>
                   <li>
                     <a href="#" className="flex items-center text-sm text-gray-700 py-1.5 px-2 rounded hover:bg-gray-100 transition-colors duration-150 group">
-                      <span className="mr-1">•</span>
+                      <span className="mr-1 text-[#1963ff]">•</span>
                       <span>Portal Access Level</span>
                       <ExternalLink className="ml-auto h-3 w-3 opacity-0 group-hover:opacity-100 transition-opacity" />
                     </a>
                   </li>
                   <li>
                     <a href="#" className="flex items-center text-sm text-gray-700 py-1.5 px-2 rounded hover:bg-gray-100 transition-colors duration-150 group">
-                      <span className="mr-1">•</span>
+                      <span className="mr-1 text-[#1963ff]">•</span>
                       <span>Portal Access Management</span>
                       <ExternalLink className="ml-auto h-3 w-3 opacity-0 group-hover:opacity-100 transition-opacity" />
                     </a>
@@ -211,79 +215,90 @@ const Settings = () => {
             className="mb-6 flex items-center text-[#1963ff] hover:text-[#0e50dd] transition-colors"
           >
             <ArrowLeft className="mr-2" size={20} />
-            <span>Back to Integrations</span>
+            <span className="font-medium">Back to Integrations</span>
           </button>
           
           {activeCategory === "ifs-provider" ? (
             <div>
-              <div className="flex justify-between items-center mb-6">
+              <div className="flex justify-between items-center mb-8">
                 <div>
-                  <h1 className="text-2xl font-bold flex items-center gap-2">
-                    <Mail className="h-6 w-6" />
-                    IFS Access Provider .Net
+                  <h1 className="text-3xl font-bold flex items-center gap-3 text-[#1963ff]">
+                    <Database className="h-8 w-8 text-amber-500" />
+                    IFS Access Provider
                   </h1>
-                  <p className="text-gray-500 text-sm mt-1">Portal Access Management</p>
+                  <p className="text-gray-600 text-sm mt-2 ml-11">Configure your IFS access provider connections</p>
                 </div>
-                <Button onClick={handleAddConnection} className="bg-amber-500 hover:bg-amber-600">
-                  <Plus size={16} className="mr-1" /> New
+                <Button 
+                  onClick={handleAddConnection} 
+                  className="bg-amber-500 hover:bg-amber-600 text-white font-semibold px-5 py-2.5 rounded-md shadow-md"
+                >
+                  <Plus size={18} className="mr-1.5" /> New Connection
                 </Button>
               </div>
 
-              <Card className="border-0 shadow-sm overflow-hidden">
-                <div className="grid grid-cols-5 bg-amber-100 text-amber-900 font-medium p-4">
-                  <div>IFS endpoint</div>
-                  <div>User Name</div>
-                  <div>Password</div>
-                  <div>Integration</div>
-                  <div className="text-center">Test Connection</div>
+              <Card className="border-0 shadow-lg rounded-xl overflow-hidden">
+                <div className="grid grid-cols-5 bg-gradient-to-r from-amber-500 to-amber-400 text-white font-semibold p-4 text-sm">
+                  <div>IFS ENDPOINT</div>
+                  <div>USERNAME</div>
+                  <div>PASSWORD</div>
+                  <div>INTEGRATION</div>
+                  <div className="text-center">ACTION</div>
                 </div>
                 <CardContent className="p-0">
                   {connections.map((connection) => (
                     <div 
                       key={connection.id} 
-                      className="grid grid-cols-5 p-4 border-b border-gray-100 items-center hover:bg-gray-50"
+                      className="grid grid-cols-5 p-5 border-b border-gray-100 items-center hover:bg-gray-50 transition-colors"
                     >
-                      <div className="text-gray-800">{connection.endpoint}</div>
+                      <div className="text-gray-800 font-medium">{connection.endpoint}</div>
                       <div className="text-gray-800">{connection.username}</div>
                       <div>
                         <Input 
                           type="password" 
                           value="••••••••••••••••••••••••••••••••••••••••••••••" 
                           readOnly 
-                          className="bg-gray-100 cursor-not-allowed"
+                          className="bg-gray-100 cursor-not-allowed border-gray-200 text-gray-500"
                         />
                       </div>
                       <div>
-                        <Badge variant="outline" className="bg-white border-gray-200 text-gray-700 hover:bg-white">
+                        <Badge variant="outline" className="bg-white border-amber-300 text-amber-700 hover:bg-white px-3 py-1 font-medium">
                           {connection.integration}
                         </Badge>
                       </div>
-                      <div className="flex items-center justify-center gap-2">
+                      <div className="flex items-center justify-center gap-3">
                         <Button 
                           onClick={() => handleTestConnection(connection.id)} 
-                          className="bg-amber-800 hover:bg-amber-900 text-white text-sm"
+                          className="bg-[#1963ff] hover:bg-[#0e50dd] text-white font-medium rounded-md shadow-sm"
                         >
-                          Test IFS Connection
+                          Test Connection
                         </Button>
                         <Button 
                           onClick={() => handleDeleteConnection(connection.id)} 
                           variant="destructive" 
                           size="sm" 
-                          className="text-sm"
+                          className="font-medium rounded-md p-2 h-auto w-auto"
                         >
-                          <Trash2 size={16} />
+                          <Trash2 size={18} />
                         </Button>
                       </div>
                     </div>
                   ))}
                 </CardContent>
               </Card>
+              
+              <div className="mt-6 text-sm text-gray-500 flex items-start gap-2">
+                <Mail className="h-4 w-4 mt-0.5 text-amber-500" />
+                <p>You can add multiple connections to different IFS instances. Each connection can be linked to a specific integration.</p>
+              </div>
             </div>
           ) : (
-            <div className="bg-white rounded-lg border border-gray-200 p-6">
-              <p className="text-gray-600">
-                Select a setting category from the sidebar to configure your IFS integration settings.
-              </p>
+            <div className="bg-white rounded-lg border border-gray-200 p-8 shadow-md">
+              <div className="flex flex-col items-center justify-center py-8">
+                <SettingsIcon className="h-16 w-16 text-[#1963ff] opacity-20 mb-4" />
+                <p className="text-gray-600 text-lg">
+                  Select a setting category from the sidebar to configure your IFS integration settings.
+                </p>
+              </div>
             </div>
           )}
         </div>
