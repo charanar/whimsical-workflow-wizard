@@ -3,6 +3,12 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Eye, EyeOff, Network, Lock, Key, ShieldCheck } from 'lucide-react';
 import CovalentHubLogo from '@/components/logos/CovalentHubLogo';
+import HubSpotLogo from '@/components/logos/HubSpotLogo';
+import PandaDocLogo from '@/components/logos/PandaDocLogo';
+import SalesforceLogo from '@/components/logos/SalesforceLogo';
+import MicrosoftAILogo from '@/components/logos/MicrosoftAILogo';
+import MicrosoftOutlookLogo from '@/components/logos/MicrosoftOutlookLogo';
+import MicrosoftExchangeLogo from '@/components/logos/MicrosoftExchangeLogo';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -56,35 +62,48 @@ const Login = () => {
         <div className="absolute bottom-20 -left-10 w-56 h-56 rounded-full bg-gradient-to-r from-[#50a5ff]/10 to-[#434ce8]/10 blur-3xl" />
         <div className="absolute -right-20 -bottom-20 w-72 h-72 rounded-full bg-gradient-to-r from-[#1963ff]/10 to-[#353acd]/10 blur-3xl" />
         
-        {/* Integration pattern - left side */}
-        <div className="absolute left-[5%] top-[20%] flex flex-col gap-16">
-          <Network size={40} className="text-[#1963ff]/20" />
-          <Lock size={32} className="text-[#353acd]/15 ml-12" />
-          <Network size={28} className="text-[#50a5ff]/20 ml-4" />
-          <Key size={36} className="text-[#434ce8]/15 ml-16" />
-          <Network size={24} className="text-[#1963ff]/15" />
+        {/* Integration icons - scattered across the background */}
+        <div className="absolute left-[5%] top-[15%] transform scale-75 opacity-10 hover:opacity-20 transition-opacity">
+          <PandaDocLogo />
+        </div>
+        <div className="absolute left-[20%] top-[35%] transform scale-75 opacity-10 hover:opacity-20 transition-opacity">
+          <MicrosoftAILogo />
+        </div>
+        <div className="absolute left-[8%] bottom-[20%] transform scale-75 opacity-10 hover:opacity-20 transition-opacity">
+          <MicrosoftExchangeLogo />
+        </div>
+        <div className="absolute right-[7%] top-[20%] transform scale-75 opacity-10 hover:opacity-20 transition-opacity">
+          <HubSpotLogo />
+        </div>
+        <div className="absolute right-[25%] top-[40%] transform scale-75 opacity-10 hover:opacity-20 transition-opacity">
+          <MicrosoftOutlookLogo />
+        </div>
+        <div className="absolute right-[12%] bottom-[25%] transform scale-75 opacity-10 hover:opacity-20 transition-opacity">
+          <SalesforceLogo />
         </div>
         
-        {/* Integration pattern - right side */}
-        <div className="absolute right-[5%] top-[15%] flex flex-col gap-16">
-          <ShieldCheck size={36} className="text-[#434ce8]/15" />
-          <Network size={30} className="text-[#1963ff]/20 mr-12" />
-          <Lock size={28} className="text-[#353acd]/15 mr-4" />
-          <Network size={34} className="text-[#50a5ff]/20 mr-16" />
-          <Key size={26} className="text-[#1963ff]/15" />
-        </div>
-        
-        {/* Horizontal connector lines - top */}
-        <div className="absolute top-[15%] left-[20%] w-[60%] h-px bg-gradient-to-r from-transparent via-[#1963ff]/10 to-transparent" />
-        <div className="absolute top-[35%] left-[20%] w-[60%] h-px bg-gradient-to-r from-transparent via-[#353acd]/10 to-transparent" />
-        
-        {/* Horizontal connector lines - bottom */}
-        <div className="absolute bottom-[35%] left-[20%] w-[60%] h-px bg-gradient-to-r from-transparent via-[#434ce8]/10 to-transparent" />
-        <div className="absolute bottom-[15%] left-[20%] w-[60%] h-px bg-gradient-to-r from-transparent via-[#50a5ff]/10 to-transparent" />
+        {/* Connector lines */}
+        <div className="absolute top-[30%] left-[15%] w-[70%] h-px bg-gradient-to-r from-transparent via-[#1963ff]/10 to-transparent" />
+        <div className="absolute top-[50%] left-[15%] w-[70%] h-px bg-gradient-to-r from-transparent via-[#353acd]/10 to-transparent" />
+        <div className="absolute bottom-[30%] left-[15%] w-[70%] h-px bg-gradient-to-r from-transparent via-[#434ce8]/10 to-transparent" />
         
         {/* Vertical connector lines */}
         <div className="absolute top-[15%] left-[30%] w-px h-[70%] bg-gradient-to-b from-transparent via-[#1963ff]/10 to-transparent" />
         <div className="absolute top-[15%] right-[30%] w-px h-[70%] bg-gradient-to-b from-transparent via-[#434ce8]/10 to-transparent" />
+        
+        {/* Network icons to represent integration points */}
+        <div className="absolute left-[40%] top-[25%] text-[#1963ff]/15">
+          <Network size={28} />
+        </div>
+        <div className="absolute right-[40%] bottom-[35%] text-[#353acd]/15">
+          <Network size={24} />
+        </div>
+        <div className="absolute left-[35%] bottom-[20%] text-[#434ce8]/15">
+          <Network size={20} />
+        </div>
+        <div className="absolute right-[45%] top-[15%] text-[#50a5ff]/15">
+          <Network size={22} />
+        </div>
       </div>
       
       <div className="w-full max-w-md px-8 py-12 bg-white/90 backdrop-blur-md rounded-xl shadow-lg relative z-10 border border-[#f0f2ff]">
