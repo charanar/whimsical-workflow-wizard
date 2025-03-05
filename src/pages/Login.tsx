@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Eye, EyeOff, Network, Lock, Key, ShieldCheck, Database, ServerCog, HardDrive, Settings, Workflow, Plug2, FileCode, Cable } from 'lucide-react';
+import { Eye, EyeOff, LayoutDashboard, MonitorSmartphone, Users, PuzzlePiece, Globe, BarChart3, Folder, FileText } from 'lucide-react';
 import CovalentHubLogo from '@/components/logos/CovalentHubLogo';
 import HubSpotLogo from '@/components/logos/HubSpotLogo';
 import PandaDocLogo from '@/components/logos/PandaDocLogo';
@@ -91,33 +91,33 @@ const Login = () => {
           <PandaDocLogo />
         </div>
         
-        {/* System icons - evenly distributed, 4 per side with consistent sizing */}
+        {/* System icons from the image - replacing the previous system icons */}
         {/* Left side */}
-        <div className="absolute left-[40%] top-[25%] text-[#8E9196]/70">
-          <ServerCog size={24} />
+        <div className="absolute left-[40%] top-[25%] text-[#403E43]/70">
+          <LayoutDashboard size={24} strokeWidth={1.5} />
         </div>
-        <div className="absolute left-[30%] top-[45%] text-[#8E9196]/70">
-          <Database size={24} />
+        <div className="absolute left-[30%] top-[45%] text-[#403E43]/70">
+          <MonitorSmartphone size={24} strokeWidth={1.5} />
         </div>
-        <div className="absolute left-[40%] top-[65%] text-[#8E9196]/70">
-          <Settings size={24} />
+        <div className="absolute left-[40%] top-[65%] text-[#403E43]/70">
+          <Users size={24} strokeWidth={1.5} />
         </div>
-        <div className="absolute left-[30%] top-[85%] text-[#8E9196]/70">
-          <FileCode size={24} />
+        <div className="absolute left-[30%] top-[85%] text-[#403E43]/70">
+          <PuzzlePiece size={24} strokeWidth={1.5} />
         </div>
         
         {/* Right side */}
-        <div className="absolute right-[40%] top-[25%] text-[#8E9196]/70">
-          <Lock size={24} />
+        <div className="absolute right-[40%] top-[25%] text-[#403E43]/70">
+          <PuzzlePiece size={24} strokeWidth={1.5} />
         </div>
-        <div className="absolute right-[30%] top-[45%] text-[#8E9196]/70">
-          <Network size={24} />
+        <div className="absolute right-[30%] top-[45%] text-[#403E43]/70">
+          <Globe size={24} strokeWidth={1.5} />
         </div>
-        <div className="absolute right-[40%] top-[65%] text-[#8E9196]/70">
-          <Workflow size={24} />
+        <div className="absolute right-[40%] top-[65%] text-[#403E43]/70">
+          <BarChart3 size={24} strokeWidth={1.5} />
         </div>
-        <div className="absolute right-[30%] top-[85%] text-[#8E9196]/70">
-          <HardDrive size={24} />
+        <div className="absolute right-[30%] top-[85%] text-[#403E43]/70">
+          <FileText size={24} strokeWidth={1.5} />
         </div>
       </div>
       
@@ -189,8 +189,10 @@ const Login = () => {
 
         <div className="mt-8 pt-6 border-t border-[#ebedf2] text-center">
           <p className="text-sm text-[#777986]">
-            For demonstration purposes, use:<br />
-            Username: <span className="font-semibold">demo</span>, Password: <span className="font-semibold">password</span>
+            Covalent Hub © {new Date().getFullYear()}
+          </p>
+          <p className="text-sm text-[#777986]">
+            Streamline your IFS workflows
           </p>
         </div>
       </div>
