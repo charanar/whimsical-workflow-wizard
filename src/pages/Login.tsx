@@ -8,6 +8,7 @@ import SalesforceLogo from '@/components/logos/SalesforceLogo';
 import MicrosoftAILogo from '@/components/logos/MicrosoftAILogo';
 import MicrosoftOutlookLogo from '@/components/logos/MicrosoftOutlookLogo';
 import MicrosoftExchangeLogo from '@/components/logos/MicrosoftExchangeLogo';
+import IFSLogo from '@/components/logos/IFSLogo';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -185,8 +186,8 @@ const Login = () => {
           <p className="text-sm text-[#777986]">
             Covalent Hub © {new Date().getFullYear()}
           </p>
-          <p className="text-sm text-[#777986]">
-            Streamline your IFS workflows
+          <p className="text-sm text-[#777986] flex items-center justify-center gap-1">
+            Streamline your <IFSLogo size={16} /> workflows
           </p>
         </div>
       </div>
