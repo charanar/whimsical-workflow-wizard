@@ -1,6 +1,6 @@
 
 import { useState } from "react";
-import { Mail, Save, X } from "lucide-react";
+import { Mail, Plus, Save, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -93,7 +93,7 @@ const EnableIntegrationSection = () => {
                     return (
                       <div 
                         key={integration.id}
-                        className="flex items-center gap-1 bg-[#1963ff] text-white px-2 py-1 rounded text-sm"
+                        className="flex items-center gap-1 bg-gray-100 text-gray-800 px-2 py-1 rounded text-sm border border-gray-200"
                       >
                         <div className="w-4 h-4 flex items-center justify-center">
                           <Logo />
@@ -101,7 +101,7 @@ const EnableIntegrationSection = () => {
                         <span>{integration.name}</span>
                         <button
                           onClick={() => handleToggleIntegration(integration.id)}
-                          className="ml-1 text-white hover:text-gray-200"
+                          className="ml-1 text-gray-500 hover:text-gray-700"
                         >
                           <X size={14} />
                         </button>
@@ -109,7 +109,7 @@ const EnableIntegrationSection = () => {
                     );
                   })}
                   {displayedIntegrations.length > 6 && (
-                    <div className="flex items-center text-[#1963ff] font-medium">
+                    <div className="flex items-center text-gray-700 font-medium">
                       +{displayedIntegrations.length - 6}
                     </div>
                   )}
@@ -130,7 +130,7 @@ const EnableIntegrationSection = () => {
               onClick={handleSave}
               className="bg-orange-400 hover:bg-orange-500 text-white px-20"
             >
-              <Save size={16} className="mr-1.5" /> Save
+              <Plus size={16} className="mr-1.5" /> Save
             </Button>
           </div>
         </CardContent>
