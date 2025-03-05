@@ -8,12 +8,12 @@ import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
 import { toast } from "sonner";
 
-// Mock data for IFS Access Provider connections
+// Mock data for IFS Access Provider connections with more realistic endpoint URLs
 const initialConnections = [
-  { id: 1, endpoint: "https://newifsendpoint.com", username: "NewConnection", integration: "Pandadoc" },
-  { id: 2, endpoint: "https://newifsendpoint.com", username: "TestConnection", integration: "CompanyHouse" },
-  { id: 3, endpoint: "https://newifsendpoint.com", username: "TestConnection", integration: "SendInBlue" },
-  { id: 4, endpoint: "https://newifsendpoint.com", username: "TestConnection", integration: "GoogleMap" },
+  { id: 1, endpoint: "https://api.ifs-service.com/v1", username: "admin_user", integration: "Pandadoc" },
+  { id: 2, endpoint: "https://ifs-connect.companyhub.io", username: "service_account", integration: "CompanyHouse" },
+  { id: 3, endpoint: "https://ifs-integration.sendinblue.com", username: "api_user", integration: "SendInBlue" },
+  { id: 4, endpoint: "https://maps.ifs-connector.com/api", username: "maps_service", integration: "GoogleMap" },
 ];
 
 const Settings = () => {
@@ -42,8 +42,8 @@ const Settings = () => {
     const newId = Math.max(...connections.map(c => c.id), 0) + 1;
     const newConnection = {
       id: newId,
-      endpoint: "https://newifsendpoint.com",
-      username: "NewConnection",
+      endpoint: "https://new-api.ifs-connect.com",
+      username: "new_user",
       integration: "New Integration"
     };
     setConnections([...connections, newConnection]);
@@ -206,69 +206,69 @@ const Settings = () => {
         </div>
       </div>
 
-      {/* Main content area */}
-      <div className="flex-1 p-8 bg-slate-50">
-        <div className="max-w-6xl mx-auto">
+      {/* Main content area - updated to use the full width and reduce margins */}
+      <div className="flex-1 bg-slate-50">
+        <div className="mx-2 my-2 max-w-full">
           {/* Back button */}
           <button 
             onClick={handleBackClick} 
-            className="mb-6 flex items-center text-[#1963ff] hover:text-[#0e50dd] transition-colors"
+            className="ml-4 mt-4 mb-6 flex items-center text-[#1963ff] hover:text-[#0047ab] transition-colors"
           >
             <ArrowLeft className="mr-2" size={20} />
             <span className="font-medium">Back to Integrations</span>
           </button>
           
           {activeCategory === "ifs-provider" ? (
-            <div>
+            <div className="mx-4">
               <div className="flex justify-between items-center mb-8">
                 <div>
                   <h1 className="text-3xl font-bold flex items-center gap-3 text-[#1963ff]">
-                    <Database className="h-8 w-8 text-amber-500" />
+                    <Database className="h-8 w-8 text-[#00c064]" />
                     IFS Access Provider
                   </h1>
                   <p className="text-gray-600 text-sm mt-2 ml-11">Configure your IFS access provider connections</p>
                 </div>
                 <Button 
                   onClick={handleAddConnection} 
-                  className="bg-amber-500 hover:bg-amber-600 text-white font-semibold px-5 py-2.5 rounded-md shadow-md"
+                  className="bg-[#00c064] hover:bg-[#00a855] text-white font-semibold px-5 py-2.5 rounded-md shadow-md"
                 >
                   <Plus size={18} className="mr-1.5" /> New Connection
                 </Button>
               </div>
 
               <Card className="border-0 shadow-lg rounded-xl overflow-hidden">
-                <div className="grid grid-cols-5 bg-gradient-to-r from-amber-500 to-amber-400 text-white font-semibold p-4 text-sm">
-                  <div>IFS ENDPOINT</div>
-                  <div>USERNAME</div>
-                  <div>PASSWORD</div>
-                  <div>INTEGRATION</div>
-                  <div className="text-center">ACTION</div>
+                <div className="grid grid-cols-5 bg-[#1963ff] text-white font-semibold p-4 text-sm">
+                  <div className="px-3">IFS ENDPOINT</div>
+                  <div className="px-3">USERNAME</div>
+                  <div className="px-3">PASSWORD</div>
+                  <div className="px-3">INTEGRATION</div>
+                  <div className="text-center px-3">ACTION</div>
                 </div>
                 <CardContent className="p-0">
                   {connections.map((connection) => (
                     <div 
                       key={connection.id} 
-                      className="grid grid-cols-5 p-5 border-b border-gray-100 items-center hover:bg-gray-50 transition-colors"
+                      className="grid grid-cols-5 border-b border-gray-100 items-center hover:bg-gray-50 transition-colors"
                     >
-                      <div className="text-gray-800 font-medium">{connection.endpoint}</div>
-                      <div className="text-gray-800">{connection.username}</div>
-                      <div>
+                      <div className="text-gray-800 font-medium p-4 px-3">{connection.endpoint}</div>
+                      <div className="text-gray-800 p-4 px-3">{connection.username}</div>
+                      <div className="p-4 px-3">
                         <Input 
                           type="password" 
-                          value="••••••••••••••••••••••••••••••••••••••••••••••" 
+                          value="••••••••••••••••••" 
                           readOnly 
                           className="bg-gray-100 cursor-not-allowed border-gray-200 text-gray-500"
                         />
                       </div>
-                      <div>
-                        <Badge variant="outline" className="bg-white border-amber-300 text-amber-700 hover:bg-white px-3 py-1 font-medium">
+                      <div className="p-4 px-3">
+                        <Badge variant="outline" className="bg-white border-[#00c064] text-[#00c064] hover:bg-white px-3 py-1 font-medium">
                           {connection.integration}
                         </Badge>
                       </div>
-                      <div className="flex items-center justify-center gap-3">
+                      <div className="flex items-center justify-center gap-3 p-4 px-3">
                         <Button 
                           onClick={() => handleTestConnection(connection.id)} 
-                          className="bg-[#1963ff] hover:bg-[#0e50dd] text-white font-medium rounded-md shadow-sm"
+                          className="bg-[#1963ff] hover:bg-[#0047ab] text-white font-medium rounded-md shadow-sm"
                         >
                           Test Connection
                         </Button>
@@ -287,12 +287,12 @@ const Settings = () => {
               </Card>
               
               <div className="mt-6 text-sm text-gray-500 flex items-start gap-2">
-                <Mail className="h-4 w-4 mt-0.5 text-amber-500" />
+                <Mail className="h-4 w-4 mt-0.5 text-[#00c064]" />
                 <p>You can add multiple connections to different IFS instances. Each connection can be linked to a specific integration.</p>
               </div>
             </div>
           ) : (
-            <div className="bg-white rounded-lg border border-gray-200 p-8 shadow-md">
+            <div className="bg-white rounded-lg border border-gray-200 p-8 shadow-md mx-4">
               <div className="flex flex-col items-center justify-center py-8">
                 <SettingsIcon className="h-16 w-16 text-[#1963ff] opacity-20 mb-4" />
                 <p className="text-gray-600 text-lg">
