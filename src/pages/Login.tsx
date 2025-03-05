@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Eye, EyeOff, AlertCircle } from 'lucide-react';
+import { Eye, EyeOff, Network, Lock, Key, ShieldCheck } from 'lucide-react';
 import CovalentHubLogo from '@/components/logos/CovalentHubLogo';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -48,7 +48,32 @@ const Login = () => {
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-b from-white to-[#f7f9ff]">
-      <div className="w-full max-w-md px-8 py-12 bg-white rounded-xl shadow-lg">
+      {/* Decorative vector elements */}
+      <div className="fixed top-0 left-0 w-full h-full overflow-hidden pointer-events-none z-0">
+        <div className="absolute -left-16 -top-16 w-64 h-64 rounded-full bg-gradient-to-r from-[#1963ff]/10 to-[#353acd]/10 blur-3xl" />
+        <div className="absolute right-16 top-32 w-48 h-48 rounded-full bg-gradient-to-r from-[#50a5ff]/10 to-[#434ce8]/10 blur-3xl" />
+        <div className="absolute bottom-20 -left-10 w-56 h-56 rounded-full bg-gradient-to-r from-[#50a5ff]/10 to-[#434ce8]/10 blur-3xl" />
+        <div className="absolute -right-20 -bottom-20 w-72 h-72 rounded-full bg-gradient-to-r from-[#1963ff]/10 to-[#353acd]/10 blur-3xl" />
+        
+        {/* Vector decorations - network nodes */}
+        <div className="absolute top-32 left-1/4 text-[#1963ff]/20 transform rotate-12">
+          <Network size={120} strokeWidth={1} />
+        </div>
+        <div className="absolute bottom-16 right-1/4 text-[#434ce8]/20 transform -rotate-12">
+          <Network size={100} strokeWidth={1} />
+        </div>
+        <div className="absolute bottom-32 left-1/5 text-[#50a5ff]/20 transform rotate-45">
+          <Lock size={50} strokeWidth={1} />
+        </div>
+        <div className="absolute top-1/4 right-32 text-[#353acd]/20 transform -rotate-15">
+          <Key size={60} strokeWidth={1} />
+        </div>
+        <div className="absolute bottom-1/4 right-40 text-[#1963ff]/20 transform rotate-30">
+          <ShieldCheck size={70} strokeWidth={1} />
+        </div>
+      </div>
+      
+      <div className="w-full max-w-md px-8 py-12 bg-white/90 backdrop-blur-md rounded-xl shadow-lg relative z-10 border border-[#f0f2ff]">
         <div className="flex flex-col items-center mb-8">
           <CovalentHubLogo size={64} className="mb-4" />
           <h1 className="text-3xl font-bold bg-gradient-to-r from-[#1963ff] via-[#353acd] to-[#2e34a5] text-transparent bg-clip-text">
@@ -122,7 +147,7 @@ const Login = () => {
         </div>
       </div>
 
-      <div className="mt-8 text-center">
+      <div className="mt-8 text-center relative z-10">
         <p className="text-sm text-[#777986]">Covalent Hub © {new Date().getFullYear()}</p>
         <p className="text-sm text-[#777986]">Streamline your IFS workflows</p>
       </div>
