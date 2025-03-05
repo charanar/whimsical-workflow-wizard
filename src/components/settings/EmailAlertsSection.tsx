@@ -9,21 +9,12 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { Button } from "@/components/ui/button";
 
 interface EmailAlert {
   id: number;
   applicationName: string;
   alertName: string;
 }
-
-// Sample data for email alerts
-const sampleAlerts: EmailAlert[] = [
-  { id: 1, applicationName: "PandaDoc", alertName: "Document Signed" },
-  { id: 2, applicationName: "SendInBlue", alertName: "Campaign Completed" },
-  { id: 3, applicationName: "GoogleMap", alertName: "Location Updated" },
-  { id: 4, applicationName: "CompanyHouse", alertName: "Company Status Change" },
-];
 
 const EmailAlertsSection = () => {
   return (
@@ -50,24 +41,11 @@ const EmailAlertsSection = () => {
               </TableRow>
             </TableHeader>
             <TableBody>
-              {sampleAlerts.map((alert) => (
-                <TableRow key={alert.id} className="hover:bg-gray-50 transition-colors border-b border-gray-200">
-                  <TableCell className="text-xs font-medium text-gray-800">{alert.applicationName}</TableCell>
-                  <TableCell className="text-xs text-gray-600">{alert.alertName}</TableCell>
-                </TableRow>
-              ))}
+              {/* Table is empty as per requirement */}
             </TableBody>
           </Table>
         </CardContent>
       </Card>
-
-      <div className="mt-4 flex justify-center">
-        <Button 
-          className="bg-[#062f4b] hover:bg-[#062f4b]/90 text-white rounded-full px-32"
-        >
-          Save
-        </Button>
-      </div>
     </div>
   );
 };
