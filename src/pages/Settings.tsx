@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "sonner";
@@ -9,6 +8,7 @@ import IFSProviderSection from "@/components/settings/IFSProviderSection";
 import HistoryAuditsSection from "@/components/settings/HistoryAuditsSection";
 import HistoryLogsConfigSection from "@/components/settings/HistoryLogsConfigSection";
 import EmailAlertsSection from "@/components/settings/EmailAlertsSection";
+import EnableIntegrationSection from "@/components/settings/EnableIntegrationSection";
 import PlaceholderSection from "@/components/settings/PlaceholderSection";
 import { Connection } from "@/components/settings/ConnectionsTable";
 import { AuditRecord } from "@/components/settings/HistoryAuditsTable";
@@ -98,6 +98,8 @@ const Settings = () => {
             <EmailAlertsSection showConfigView={false} />
           ) : activeCategory === "email-alert-config" ? (
             <EmailAlertsSection showConfigView={true} />
+          ) : activeCategory === "enable-integration" ? (
+            <EnableIntegrationSection />
           ) : (
             <PlaceholderSection />
           )}
