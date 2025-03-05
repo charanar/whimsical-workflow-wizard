@@ -187,7 +187,7 @@ const Login = () => {
             Covalent Hub © {new Date().getFullYear()}
           </p>
           <p className="text-sm text-[#777986] flex items-center justify-center gap-2">
-            Streamline your <IFSLogo size={24} className="inline-block" /> workflows
+            Streamline your <IFSLogo size={40} className="inline-block" /> workflows
           </p>
         </div>
       </div>
