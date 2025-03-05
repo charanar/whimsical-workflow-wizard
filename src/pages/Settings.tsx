@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { ArrowLeft, Cog, Database, ExternalLink, Mail, Plus, Settings as SettingsIcon, Share2, Trash2, Users } from "lucide-react";
@@ -236,7 +237,7 @@ const Settings = () => {
               </div>
 
               <Card className="border-0 shadow-lg rounded-xl overflow-hidden">
-                <div className="grid grid-cols-5 bg-gradient-to-r from-[#1EAEDB] to-[#0FA0CE] text-white font-medium p-4 text-sm">
+                <div className="grid grid-cols-5 bg-[#062f4b] text-white font-medium p-4 text-sm">
                   <div className="px-3 col-span-2">IFS ENDPOINT</div>
                   <div className="px-3">USERNAME</div>
                   <div className="px-3">PASSWORD</div>
