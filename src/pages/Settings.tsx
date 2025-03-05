@@ -7,6 +7,7 @@ import SettingsSidebar from "@/components/settings/SettingsSidebar";
 import BackButton from "@/components/settings/BackButton";
 import IFSProviderSection from "@/components/settings/IFSProviderSection";
 import HistoryAuditsSection from "@/components/settings/HistoryAuditsSection";
+import HistoryLogsConfigSection from "@/components/settings/HistoryLogsConfigSection";
 import PlaceholderSection from "@/components/settings/PlaceholderSection";
 import { Connection } from "@/components/settings/ConnectionsTable";
 import { AuditRecord } from "@/components/settings/HistoryAuditsTable";
@@ -90,6 +91,8 @@ const Settings = () => {
               auditRecords={[]}
               onViewDetails={handleViewAuditDetails}
             />
+          ) : activeCategory === "history-logs-config" ? (
+            <HistoryLogsConfigSection />
           ) : (
             <PlaceholderSection />
           )}
