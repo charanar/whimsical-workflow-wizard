@@ -3,6 +3,8 @@ import { companies } from "@/data/companies";
 import CompanyCard from "@/components/CompanyCard";
 import { Cog, Search, Share2, User } from "lucide-react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
+import { Button } from "@/components/ui/button";
 
 const Index = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -38,18 +40,20 @@ const Index = () => {
           </button>
         </div>
         
-        {/* Bottom user icon */}
+        {/* Bottom user icon with login link */}
         <div className="mt-auto">
-          <button className="h-10 w-10 rounded-full flex items-center justify-center text-gray-500 hover:text-gray-700 hover:bg-gray-100 transition-colors">
-            <User size={20} />
-          </button>
+          <Link to="/login">
+            <button className="h-10 w-10 rounded-full flex items-center justify-center text-gray-500 hover:text-gray-700 hover:bg-gray-100 transition-colors">
+              <User size={20} />
+            </button>
+          </Link>
         </div>
       </div>
       
       {/* Main Content */}
       <div className="flex-1 bg-white py-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
-          {/* Header with search widget */}
+          {/* Header with search widget and login button */}
           <div className="flex flex-col md:flex-row md:items-center justify-between mb-16">
             <div className="text-left mb-8 md:mb-0">
               <h1 className="text-5xl font-bold mb-5 bg-gradient-to-r from-[#1963ff] via-[#353acd] to-[#2e34a5] text-transparent bg-clip-text">
@@ -61,18 +65,28 @@ const Index = () => {
               </p>
             </div>
             
-            {/* Search widget */}
-            <div className="relative w-full md:w-72">
-              <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                <Search className="h-5 w-5 text-[#707287]" />
+            {/* Search widget and login button container */}
+            <div className="flex flex-col sm:flex-row items-center gap-4">
+              {/* Search widget */}
+              <div className="relative w-full md:w-72">
+                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                  <Search className="h-5 w-5 text-[#707287]" />
+                </div>
+                <input
+                  type="text"
+                  className="bg-[#f7f7f8] border border-[#d8d9df] w-full pl-10 pr-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1963ff] focus:border-transparent"
+                  placeholder="Search integrations..."
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                />
               </div>
-              <input
-                type="text"
-                className="bg-[#f7f7f8] border border-[#d8d9df] w-full pl-10 pr-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1963ff] focus:border-transparent"
-                placeholder="Search integrations..."
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-              />
+              
+              {/* Login button */}
+              <Link to="/login">
+                <Button variant="outline" className="border-[#1963ff] text-[#1963ff] hover:bg-[#1963ff] hover:text-white">
+                  Login
+                </Button>
+              </Link>
             </div>
           </div>
           
