@@ -9,7 +9,7 @@ type SettingsSidebarProps = {
 
 const SettingsSidebar = ({ activeCategory, setActiveCategory }: SettingsSidebarProps) => {
   return (
-    <div className="w-52 border-r border-gray-100 bg-gray-50">
+    <div className="w-40 border-r border-gray-100 bg-gray-50"> {/* Changed from w-52 to w-40 */}
       <div className="p-4">
         <h2 className="text-xl font-semibold mb-4 text-[#353acd]">Settings</h2>
         

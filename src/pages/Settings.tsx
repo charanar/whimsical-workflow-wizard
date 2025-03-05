@@ -9,12 +9,12 @@ import IFSProviderSection from "@/components/settings/IFSProviderSection";
 import PlaceholderSection from "@/components/settings/PlaceholderSection";
 import { Connection } from "@/components/settings/ConnectionsTable";
 
-// Mock data for IFS Access Provider connections with consistent endpoint format
+// Mock data for IFS Access Provider connections with https:// format
 const initialConnections = [
-  { id: 1, endpoint: "www.newifsendpoint.com", username: "admin_user", integration: "Pandadoc", status: "active", condition: "online" },
-  { id: 2, endpoint: "www.newifsendpoint.com", username: "service_account", integration: "CompanyHouse", status: "active", condition: "online" },
-  { id: 3, endpoint: "www.newifsendpoint.com", username: "api_user", integration: "SendInBlue", status: "deactivated", condition: "offline" },
-  { id: 4, endpoint: "www.newifsendpoint.com", username: "maps_service", integration: "GoogleMap", status: "active", condition: "online" },
+  { id: 1, endpoint: "https://newifsendpoint.com", username: "admin_user", integration: "Pandadoc", status: "active", condition: "online" },
+  { id: 2, endpoint: "https://newifsendpoint.com", username: "service_account", integration: "CompanyHouse", status: "active", condition: "online" },
+  { id: 3, endpoint: "https://newifsendpoint.com", username: "api_user", integration: "SendInBlue", status: "deactivated", condition: "offline" },
+  { id: 4, endpoint: "https://newifsendpoint.com", username: "maps_service", integration: "GoogleMap", status: "active", condition: "online" },
 ];
 
 const Settings = () => {
@@ -64,9 +64,9 @@ const Settings = () => {
         setActiveCategory={setActiveCategory} 
       />
 
-      {/* Section 3: IFS Access Provider content area - reduced padding */}
+      {/* Section 3: IFS Access Provider content area */}
       <div className="flex-1 bg-slate-50">
-        <div className="p-2 pl-4"> {/* Reduced padding here from p-4 pl-8 to p-2 pl-4 */}
+        <div className="p-2 pl-4">
           {/* Back button */}
           <BackButton onClick={handleBackClick} />
           
