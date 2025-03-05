@@ -1,4 +1,4 @@
-<lov-codelov-code>
+
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { ArrowLeft, Cog, Database, ExternalLink, Mail, Plus, Settings as SettingsIcon, Share2, Trash2, Users } from "lucide-react";
@@ -302,4 +302,3 @@ const Settings = () => {
 };
 
 export default Settings;
-</lov-code>
