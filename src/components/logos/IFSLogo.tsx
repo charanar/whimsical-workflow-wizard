@@ -16,15 +16,15 @@ const IFSLogo: React.FC<IFSLogoProps> = ({ className = "", size = 20 }) => {
       fill="none" 
       xmlns="http://www.w3.org/2000/svg"
     >
-      {/* Sunburst gradient */}
+      {/* Sunburst gradient - updated with more vibrant colors */}
       <defs>
         <linearGradient id="purpleBlueGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stopColor="#9b57f9" />
-          <stop offset="100%" stopColor="#1EAEDB" />
+          <stop offset="0%" stopColor="#8B5CF6" />
+          <stop offset="100%" stopColor="#0EA5E9" />
         </linearGradient>
       </defs>
       
-      {/* Sunburst rays - top left to bottom right */}
+      {/* Sunburst rays - with improved visibility */}
       <g fill="url(#purpleBlueGradient)">
         {/* Top rays */}
         <path d="M200 120 L240 20 L260 95 Z" />
@@ -57,8 +57,8 @@ const IFSLogo: React.FC<IFSLogoProps> = ({ className = "", size = 20 }) => {
         <path d="M170 130 L110 60 L180 150 Z" />
       </g>
       
-      {/* IFS Text */}
-      <g transform="translate(450, 320)" fill="#9b57f9">
+      {/* IFS Text - made brighter and more visible */}
+      <g transform="translate(450, 320)" fill="#8B5CF6">
         <path d="M0 0 L40 0 L40 160 L0 160 Z" />
         <path d="M60 0 L200 0 L200 40 L60 40 Z" />
         <path d="M60 60 L160 60 L160 100 L60 100 Z" />
