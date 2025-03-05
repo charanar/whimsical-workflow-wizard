@@ -34,7 +34,7 @@ const SettingsSidebar = ({ activeCategory, setActiveCategory }: SettingsSidebarP
                 <a 
                   href="#" 
                   onClick={(e) => { e.preventDefault(); setActiveCategory("ifs-provider"); }}
-                  className={`flex items-center text-sm py-1.5 px-2 rounded transition-colors duration-150 group
+                  className={`flex items-center text-xs py-1.5 px-2 rounded transition-colors duration-150 group
                     ${activeCategory === "ifs-provider" ? "bg-gray-200 text-[#1963ff] font-medium" : "text-gray-700 hover:bg-gray-100"}`}
                 >
                   <span className="mr-1 text-[#1963ff]">•</span>
@@ -46,7 +46,7 @@ const SettingsSidebar = ({ activeCategory, setActiveCategory }: SettingsSidebarP
                 <a 
                   href="#" 
                   onClick={(e) => e.preventDefault()}
-                  className="flex items-center text-sm text-gray-700 py-1.5 px-2 rounded hover:bg-gray-100 transition-colors duration-150 group"
+                  className="flex items-center text-xs text-gray-700 py-1.5 px-2 rounded hover:bg-gray-100 transition-colors duration-150 group"
                 >
                   <span className="mr-1 text-[#1963ff]">•</span>
                   <span>History Audits</span>
@@ -57,7 +57,7 @@ const SettingsSidebar = ({ activeCategory, setActiveCategory }: SettingsSidebarP
                 <a 
                   href="#" 
                   onClick={(e) => e.preventDefault()}
-                  className="flex items-center text-sm text-gray-700 py-1.5 px-2 rounded hover:bg-gray-100 transition-colors duration-150 group"
+                  className="flex items-center text-xs text-gray-700 py-1.5 px-2 rounded hover:bg-gray-100 transition-colors duration-150 group"
                 >
                   <span className="mr-1 text-[#1963ff]">•</span>
                   <span>History Logs Configuration</span>
@@ -68,7 +68,7 @@ const SettingsSidebar = ({ activeCategory, setActiveCategory }: SettingsSidebarP
                 <a 
                   href="#" 
                   onClick={(e) => e.preventDefault()}
-                  className="flex items-center text-sm text-gray-700 py-1.5 px-2 rounded hover:bg-gray-100 transition-colors duration-150 group"
+                  className="flex items-center text-xs text-gray-700 py-1.5 px-2 rounded hover:bg-gray-100 transition-colors duration-150 group"
                 >
                   <span className="mr-1 text-[#1963ff]">•</span>
                   <span>Email Alerts</span>
@@ -79,7 +79,7 @@ const SettingsSidebar = ({ activeCategory, setActiveCategory }: SettingsSidebarP
                 <a 
                   href="#" 
                   onClick={(e) => e.preventDefault()}
-                  className="flex items-center text-sm text-gray-700 py-1.5 px-2 rounded hover:bg-gray-100 transition-colors duration-150 group"
+                  className="flex items-center text-xs text-gray-700 py-1.5 px-2 rounded hover:bg-gray-100 transition-colors duration-150 group"
                 >
                   <span className="mr-1 text-[#1963ff]">•</span>
                   <span>Email Alert Configuration</span>
@@ -90,7 +90,7 @@ const SettingsSidebar = ({ activeCategory, setActiveCategory }: SettingsSidebarP
                 <a 
                   href="#" 
                   onClick={(e) => e.preventDefault()}
-                  className="flex items-center text-sm text-gray-700 py-1.5 px-2 rounded hover:bg-gray-100 transition-colors duration-150 group"
+                  className="flex items-center text-xs text-gray-700 py-1.5 px-2 rounded hover:bg-gray-100 transition-colors duration-150 group"
                 >
                   <span className="mr-1 text-[#1963ff]">•</span>
                   <span>Enable Integration</span>
@@ -122,7 +122,7 @@ const SettingsSidebar = ({ activeCategory, setActiveCategory }: SettingsSidebarP
                 <a 
                   href="#" 
                   onClick={(e) => e.preventDefault()}
-                  className="flex items-center text-sm text-gray-700 py-1.5 px-2 rounded hover:bg-gray-100 transition-colors duration-150 group"
+                  className="flex items-center text-xs text-gray-700 py-1.5 px-2 rounded hover:bg-gray-100 transition-colors duration-150 group"
                 >
                   <span className="mr-1 text-[#1963ff]">•</span>
                   <span>Portal Admin Users</span>
@@ -133,7 +133,7 @@ const SettingsSidebar = ({ activeCategory, setActiveCategory }: SettingsSidebarP
                 <a 
                   href="#" 
                   onClick={(e) => e.preventDefault()}
-                  className="flex items-center text-sm text-gray-700 py-1.5 px-2 rounded hover:bg-gray-100 transition-colors duration-150 group"
+                  className="flex items-center text-xs text-gray-700 py-1.5 px-2 rounded hover:bg-gray-100 transition-colors duration-150 group"
                 >
                   <span className="mr-1 text-[#1963ff]">•</span>
                   <span>Portal Access Level</span>
@@ -144,7 +144,7 @@ const SettingsSidebar = ({ activeCategory, setActiveCategory }: SettingsSidebarP
                 <a 
                   href="#" 
                   onClick={(e) => e.preventDefault()}
-                  className="flex items-center text-sm text-gray-700 py-1.5 px-2 rounded hover:bg-gray-100 transition-colors duration-150 group"
+                  className="flex items-center text-xs text-gray-700 py-1.5 px-2 rounded hover:bg-gray-100 transition-colors duration-150 group"
                 >
                   <span className="mr-1 text-[#1963ff]">•</span>
                   <span>Portal Access Management</span>

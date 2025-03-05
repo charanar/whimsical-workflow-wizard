@@ -22,8 +22,8 @@ const IFSProviderSection = ({ connections, onAddConnection, onTestConnection, on
         onDeleteConnection={onDeleteConnection} 
       />
       
-      <div className="mt-3 text-sm text-gray-500 flex items-start gap-2"> {/* Changed from mt-5 to mt-3 */}
-        <Mail className="h-4 w-4 mt-0.5 text-[#062f4b]" />
+      <div className="mt-2 text-xs text-gray-500 flex items-start gap-2">
+        <Mail className="h-3 w-3 mt-0.5 text-[#062f4b]" />
         <p>You can add multiple connections to different IFS instances. Each connection can be linked to a specific integration.</p>
       </div>
     </div>

@@ -29,7 +29,7 @@ const ConnectionsTable = ({ connections, onTestConnection, onDeleteConnection }:
   return (
     <Card className="border border-gray-200 shadow-sm rounded-md overflow-hidden w-full">
       <div className="border-b border-gray-200">
-        <div className="grid grid-cols-5 bg-white text-gray-500 text-sm p-4">
+        <div className="grid grid-cols-5 bg-white text-gray-500 text-xs p-3">
           <div className="px-3 font-medium">IFS ENDPOINT</div>
           <div className="px-3 font-medium">USERNAME</div>
           <div className="px-3 font-medium">PASSWORD</div>
@@ -43,18 +43,18 @@ const ConnectionsTable = ({ connections, onTestConnection, onDeleteConnection }:
             key={connection.id} 
             className="grid grid-cols-5 border-b border-gray-200 items-center hover:bg-gray-50 transition-colors"
           >
-            <div className="text-gray-800 font-medium p-4 px-3 truncate flex items-center gap-2">
-              <div className="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center">
+            <div className="text-gray-800 font-medium p-3 px-3 truncate flex items-center gap-2 text-xs">
+              <div className="w-6 h-6 bg-gray-100 rounded-full flex items-center justify-center">
                 <span className="text-xs font-bold text-gray-600">{connection.username.charAt(0).toUpperCase()}</span>
               </div>
               {connection.endpoint}
             </div>
-            <div className="text-gray-600 p-4 px-3 truncate">{connection.username}</div>
-            <div className="text-gray-600 p-4 px-3">••••••••</div>
-            <div className="text-gray-600 p-4 px-3">
+            <div className="text-gray-600 p-3 px-3 truncate text-xs">{connection.username}</div>
+            <div className="text-gray-600 p-3 px-3 text-xs">••••••••</div>
+            <div className="text-gray-600 p-3 px-3 text-xs">
               {connection.status === "active" ? (
                 <span className="inline-flex items-center text-green-600">
-                  <Check size={16} className="mr-1" /> {connection.integration}
+                  <Check size={14} className="mr-1" /> {connection.integration}
                 </span>
               ) : (
                 <span className="inline-flex items-center text-gray-500">
@@ -62,19 +62,19 @@ const ConnectionsTable = ({ connections, onTestConnection, onDeleteConnection }:
                 </span>
               )}
             </div>
-            <div className="p-4 px-3 flex items-center justify-center">
+            <div className="p-3 px-3 flex items-center justify-center">
               <Button 
                 variant="outline" 
                 size="sm" 
-                className="text-xs border-[#353acd] text-[#353acd] hover:bg-[#353acd]/10"
+                className="text-xs border-[#353acd] text-[#353acd] hover:bg-[#353acd]/10 h-7 px-2"
                 onClick={() => onTestConnection(connection.id)}
               >
                 Test Connection
               </Button>
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
-                  <Button variant="ghost" size="sm" className="h-8 w-8 p-0 ml-2">
-                    <MoreVertical className="h-4 w-4" />
+                  <Button variant="ghost" size="sm" className="h-7 w-7 p-0 ml-2">
+                    <MoreVertical className="h-3 w-3" />
                   </Button>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent align="end" className="w-[200px]">
