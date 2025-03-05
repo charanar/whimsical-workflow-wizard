@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, Settings as SettingsIcon, Users, ExternalLink } from "lucide-react";
 
 const Settings = () => {
   const navigate = useNavigate();
@@ -58,71 +58,115 @@ const Settings = () => {
       </div>
 
       {/* Settings sidebar */}
-      <div className="w-64 border-r border-gray-100">
+      <div className="w-64 border-r border-gray-100 bg-gray-50">
         <div className="p-6">
           <h2 className="text-xl font-semibold mb-6">Settings</h2>
           
           {/* General Section */}
-          <div className="mb-6">
-            <h3 className={`text-sm font-semibold mb-2 ${activeCategory === "general" ? "text-[#1963ff]" : "text-gray-900"}`}>
-              General
-            </h3>
-            <ul className="space-y-2">
-              <li>
-                <a href="#" className="text-sm hover:text-[#1963ff] transition-colors text-gray-700 block">
-                  IFS Access provider
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-sm hover:text-[#1963ff] transition-colors text-gray-700 block">
-                  History Audits
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-sm hover:text-[#1963ff] transition-colors text-gray-700 block">
-                  History Logs Configuration
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-sm hover:text-[#1963ff] transition-colors text-gray-700 block">
-                  Email Alerts
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-sm hover:text-[#1963ff] transition-colors text-gray-700 block">
-                  Email Alert Configuration
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-sm hover:text-[#1963ff] transition-colors text-gray-700 block">
-                  Enable Integration
-                </a>
-              </li>
-            </ul>
+          <div className="mb-8">
+            <button 
+              onClick={() => setActiveCategory("general")}
+              className={`flex items-center w-full mb-3 text-left px-3 py-2 rounded-lg transition-all ${
+                activeCategory === "general" 
+                  ? "bg-[#1963ff] text-white font-medium shadow-md" 
+                  : "text-gray-700 hover:bg-gray-200"
+              }`}
+            >
+              <SettingsIcon className="mr-2 h-4 w-4" />
+              <span className="text-sm font-medium">General</span>
+            </button>
+            
+            {activeCategory === "general" && (
+              <div className="ml-2 pl-4 border-l-2 border-[#1963ff] animate-fade-in">
+                <ul className="space-y-2 py-1">
+                  <li>
+                    <a href="#" className="flex items-center text-sm text-gray-700 py-1.5 px-2 rounded hover:bg-gray-100 transition-colors duration-150 group">
+                      <span className="mr-1">•</span>
+                      <span>IFS Access provider</span>
+                      <ExternalLink className="ml-auto h-3 w-3 opacity-0 group-hover:opacity-100 transition-opacity" />
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" className="flex items-center text-sm text-gray-700 py-1.5 px-2 rounded hover:bg-gray-100 transition-colors duration-150 group">
+                      <span className="mr-1">•</span>
+                      <span>History Audits</span>
+                      <ExternalLink className="ml-auto h-3 w-3 opacity-0 group-hover:opacity-100 transition-opacity" />
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" className="flex items-center text-sm text-gray-700 py-1.5 px-2 rounded hover:bg-gray-100 transition-colors duration-150 group">
+                      <span className="mr-1">•</span>
+                      <span>History Logs Configuration</span>
+                      <ExternalLink className="ml-auto h-3 w-3 opacity-0 group-hover:opacity-100 transition-opacity" />
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" className="flex items-center text-sm text-gray-700 py-1.5 px-2 rounded hover:bg-gray-100 transition-colors duration-150 group">
+                      <span className="mr-1">•</span>
+                      <span>Email Alerts</span>
+                      <ExternalLink className="ml-auto h-3 w-3 opacity-0 group-hover:opacity-100 transition-opacity" />
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" className="flex items-center text-sm text-gray-700 py-1.5 px-2 rounded hover:bg-gray-100 transition-colors duration-150 group">
+                      <span className="mr-1">•</span>
+                      <span>Email Alert Configuration</span>
+                      <ExternalLink className="ml-auto h-3 w-3 opacity-0 group-hover:opacity-100 transition-opacity" />
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" className="flex items-center text-sm text-gray-700 py-1.5 px-2 rounded hover:bg-gray-100 transition-colors duration-150 group">
+                      <span className="mr-1">•</span>
+                      <span>Enable Integration</span>
+                      <ExternalLink className="ml-auto h-3 w-3 opacity-0 group-hover:opacity-100 transition-opacity" />
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            )}
           </div>
           
           {/* Users Section */}
           <div>
-            <h3 className={`text-sm font-semibold mb-2 ${activeCategory === "users" ? "text-[#1963ff]" : "text-gray-900"}`}>
-              Users
-            </h3>
-            <ul className="space-y-2">
-              <li>
-                <a href="#" className="text-sm hover:text-[#1963ff] transition-colors text-gray-700 block">
-                  Portal Admin Users
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-sm hover:text-[#1963ff] transition-colors text-gray-700 block">
-                  Portal Access Level
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-sm hover:text-[#1963ff] transition-colors text-gray-700 block">
-                  Portal Access Management
-                </a>
-              </li>
-            </ul>
+            <button 
+              onClick={() => setActiveCategory("users")}
+              className={`flex items-center w-full mb-3 text-left px-3 py-2 rounded-lg transition-all ${
+                activeCategory === "users" 
+                  ? "bg-[#1963ff] text-white font-medium shadow-md" 
+                  : "text-gray-700 hover:bg-gray-200"
+              }`}
+            >
+              <Users className="mr-2 h-4 w-4" />
+              <span className="text-sm font-medium">Users</span>
+            </button>
+            
+            {activeCategory === "users" && (
+              <div className="ml-2 pl-4 border-l-2 border-[#1963ff] animate-fade-in">
+                <ul className="space-y-2 py-1">
+                  <li>
+                    <a href="#" className="flex items-center text-sm text-gray-700 py-1.5 px-2 rounded hover:bg-gray-100 transition-colors duration-150 group">
+                      <span className="mr-1">•</span>
+                      <span>Portal Admin Users</span>
+                      <ExternalLink className="ml-auto h-3 w-3 opacity-0 group-hover:opacity-100 transition-opacity" />
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" className="flex items-center text-sm text-gray-700 py-1.5 px-2 rounded hover:bg-gray-100 transition-colors duration-150 group">
+                      <span className="mr-1">•</span>
+                      <span>Portal Access Level</span>
+                      <ExternalLink className="ml-auto h-3 w-3 opacity-0 group-hover:opacity-100 transition-opacity" />
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" className="flex items-center text-sm text-gray-700 py-1.5 px-2 rounded hover:bg-gray-100 transition-colors duration-150 group">
+                      <span className="mr-1">•</span>
+                      <span>Portal Access Management</span>
+                      <ExternalLink className="ml-auto h-3 w-3 opacity-0 group-hover:opacity-100 transition-opacity" />
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            )}
           </div>
         </div>
       </div>
