@@ -1,6 +1,7 @@
+
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Eye, EyeOff, Network, Lock, Key, ShieldCheck, Database, ServerCog, HardDrive, Settings, Workflow, Plug2, FileCode, Cable, Circle, Dot } from 'lucide-react';
+import { Eye, EyeOff, Network, Lock, Key, ShieldCheck, Database, ServerCog, HardDrive, Settings, Workflow, Plug2, FileCode, Cable } from 'lucide-react';
 import CovalentHubLogo from '@/components/logos/CovalentHubLogo';
 import HubSpotLogo from '@/components/logos/HubSpotLogo';
 import PandaDocLogo from '@/components/logos/PandaDocLogo';
@@ -53,7 +54,7 @@ const Login = () => {
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-b from-white to-[#f7f9ff]">
-      {/* Network background with dots */}
+      {/* Background with gradient orbs */}
       <div className="fixed top-0 left-0 w-full h-full overflow-hidden pointer-events-none z-0">
         {/* Background gradient orbs */}
         <div className="absolute -left-16 -top-16 w-64 h-64 rounded-full bg-gradient-to-r from-[#1963ff]/10 to-[#353acd]/10 blur-3xl" />
@@ -61,127 +62,62 @@ const Login = () => {
         <div className="absolute bottom-20 -left-10 w-56 h-56 rounded-full bg-gradient-to-r from-[#50a5ff]/10 to-[#434ce8]/10 blur-3xl" />
         <div className="absolute -right-20 -bottom-20 w-72 h-72 rounded-full bg-gradient-to-r from-[#1963ff]/10 to-[#353acd]/10 blur-3xl" />
         
-        {/* Network dots - top */}
-        <div className="absolute left-[10%] top-[10%] text-[#8E9196]">
-          <Circle size={10} fill="#8E9196" />
-        </div>
-        <div className="absolute left-[25%] top-[8%] text-[#8E9196]">
-          <Circle size={10} fill="#8E9196" />
-        </div>
-        <div className="absolute left-[40%] top-[12%] text-[#8E9196]">
-          <Circle size={10} fill="#8E9196" />
-        </div>
-        <div className="absolute left-[55%] top-[9%] text-[#8E9196]">
-          <Circle size={10} fill="#8E9196" />
-        </div>
-        <div className="absolute left-[70%] top-[11%] text-[#8E9196]">
-          <Circle size={10} fill="#8E9196" />
-        </div>
-        <div className="absolute left-[85%] top-[10%] text-[#8E9196]">
-          <Circle size={10} fill="#8E9196" />
-        </div>
-        
-        {/* Network dots - middle */}
-        <div className="absolute left-[5%] top-[35%] text-[#8E9196]">
-          <Circle size={10} fill="#8E9196" />
-        </div>
-        <div className="absolute left-[20%] top-[30%] text-[#8E9196]">
-          <Circle size={10} fill="#8E9196" />
-        </div>
-        <div className="absolute left-[35%] top-[33%] text-[#8E9196]">
-          <Circle size={10} fill="#8E9196" />
-        </div>
-        <div className="absolute left-[50%] top-[35%] text-[#8E9196]">
-          <Circle size={10} fill="#8E9196" />
-        </div>
-        <div className="absolute left-[65%] top-[32%] text-[#8E9196]">
-          <Circle size={10} fill="#8E9196" />
-        </div>
-        <div className="absolute left-[80%] top-[36%] text-[#8E9196]">
-          <Circle size={10} fill="#8E9196" />
-        </div>
-        <div className="absolute left-[95%] top-[34%] text-[#8E9196]">
-          <Circle size={10} fill="#8E9196" />
-        </div>
-        
-        {/* Network dots - bottom */}
-        <div className="absolute left-[8%] top-[65%] text-[#8E9196]">
-          <Circle size={10} fill="#8E9196" />
-        </div>
-        <div className="absolute left-[22%] top-[70%] text-[#8E9196]">
-          <Circle size={10} fill="#8E9196" />
-        </div>
-        <div className="absolute left-[38%] top-[68%] text-[#8E9196]">
-          <Circle size={10} fill="#8E9196" />
-        </div>
-        <div className="absolute left-[52%] top-[72%] text-[#8E9196]">
-          <Circle size={10} fill="#8E9196" />
-        </div>
-        <div className="absolute left-[68%] top-[67%] text-[#8E9196]">
-          <Circle size={10} fill="#8E9196" />
-        </div>
-        <div className="absolute left-[82%] top-[71%] text-[#8E9196]">
-          <Circle size={10} fill="#8E9196" />
-        </div>
-        <div className="absolute left-[94%] top-[66%] text-[#8E9196]">
-          <Circle size={10} fill="#8E9196" />
-        </div>
-        
-        {/* Network dots - center area with system icons */}
-        <div className="absolute left-[25%] top-[45%] text-[#8E9196]">
-          <Database size={20} />
-        </div>
-        <div className="absolute left-[42%] top-[48%] text-[#8E9196]">
-          <ServerCog size={20} />
-        </div>
-        <div className="absolute left-[58%] top-[44%] text-[#8E9196]">
-          <Lock size={20} />
-        </div>
-        <div className="absolute left-[75%] top-[47%] text-[#8E9196]">
-          <Network size={20} />
-        </div>
-        
-        {/* Integration company icons - gray single-color versions */}
-        <div className="absolute left-[15%] top-[20%] transform scale-75 opacity-20 grayscale">
+        {/* Integration company icons - evenly distributed, 4 per side */}
+        {/* Left side */}
+        <div className="absolute left-[20%] top-[20%] transform scale-75 opacity-20 grayscale">
           <PandaDocLogo />
         </div>
-        <div className="absolute right-[15%] top-[22%] transform scale-75 opacity-20 grayscale">
-          <HubSpotLogo />
-        </div>
-        <div className="absolute left-[10%] bottom-[40%] transform scale-75 opacity-20 grayscale">
+        <div className="absolute left-[10%] top-[40%] transform scale-75 opacity-20 grayscale">
           <MicrosoftExchangeLogo />
         </div>
-        <div className="absolute right-[12%] bottom-[38%] transform scale-75 opacity-20 grayscale">
-          <SalesforceLogo />
-        </div>
-        <div className="absolute left-[30%] bottom-[25%] transform scale-75 opacity-20 grayscale">
+        <div className="absolute left-[20%] top-[60%] transform scale-75 opacity-20 grayscale">
           <MicrosoftAILogo />
         </div>
-        <div className="absolute right-[30%] top-[25%] transform scale-75 opacity-20 grayscale">
-          <MicrosoftOutlookLogo />
+        <div className="absolute left-[10%] top-[80%] transform scale-75 opacity-20 grayscale">
+          <HubSpotLogo />
         </div>
         
-        {/* System icons - IFS related */}
+        {/* Right side */}
+        <div className="absolute right-[20%] top-[20%] transform scale-75 opacity-20 grayscale">
+          <MicrosoftOutlookLogo />
+        </div>
+        <div className="absolute right-[10%] top-[40%] transform scale-75 opacity-20 grayscale">
+          <SalesforceLogo />
+        </div>
+        <div className="absolute right-[20%] top-[60%] transform scale-75 opacity-20 grayscale">
+          <MicrosoftExchangeLogo />
+        </div>
+        <div className="absolute right-[10%] top-[80%] transform scale-75 opacity-20 grayscale">
+          <PandaDocLogo />
+        </div>
+        
+        {/* System icons - evenly distributed, 4 per side with consistent sizing */}
+        {/* Left side */}
         <div className="absolute left-[40%] top-[25%] text-[#8E9196]/70">
-          <ServerCog size={20} />
+          <ServerCog size={24} />
         </div>
-        <div className="absolute right-[40%] bottom-[25%] text-[#8E9196]/70">
-          <HardDrive size={20} />
+        <div className="absolute left-[30%] top-[45%] text-[#8E9196]/70">
+          <Database size={24} />
         </div>
-        <div className="absolute left-[60%] top-[20%] text-[#8E9196]/70">
-          <Settings size={20} />
+        <div className="absolute left-[40%] top-[65%] text-[#8E9196]/70">
+          <Settings size={24} />
         </div>
-        <div className="absolute right-[60%] bottom-[20%] text-[#8E9196]/70">
-          <Workflow size={20} />
+        <div className="absolute left-[30%] top-[85%] text-[#8E9196]/70">
+          <FileCode size={24} />
         </div>
-        <div className="absolute left-[20%] top-[50%] text-[#8E9196]/70">
-          <FileCode size={20} />
+        
+        {/* Right side */}
+        <div className="absolute right-[40%] top-[25%] text-[#8E9196]/70">
+          <Lock size={24} />
         </div>
-        <div className="absolute right-[20%] top-[50%] text-[#8E9196]/70">
-          <Cable size={20} />
+        <div className="absolute right-[30%] top-[45%] text-[#8E9196]/70">
+          <Network size={24} />
         </div>
-        <div className="absolute left-[45%] bottom-[50%] text-[#8E9196]/70">
-          <Plug2 size={20} />
+        <div className="absolute right-[40%] top-[65%] text-[#8E9196]/70">
+          <Workflow size={24} />
+        </div>
+        <div className="absolute right-[30%] top-[85%] text-[#8E9196]/70">
+          <HardDrive size={24} />
         </div>
       </div>
       
