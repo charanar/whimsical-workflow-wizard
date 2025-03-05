@@ -133,7 +133,7 @@ const HistoryLogsConfigSection = () => {
 
           <div className="mt-8">
             <Button 
-              className="w-full bg-amber-100 hover:bg-amber-200 text-amber-800 border-amber-300"
+              className="w-full bg-[#062f4b] hover:bg-[#062f4b]/90 text-white"
               onClick={handleSave}
             >
               Save
