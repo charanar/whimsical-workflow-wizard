@@ -44,9 +44,6 @@ const ConnectionsTable = ({ connections, onTestConnection, onDeleteConnection }:
             className="grid grid-cols-5 border-b border-gray-200 items-center hover:bg-gray-50 transition-colors"
           >
             <div className="text-gray-800 font-medium p-3 px-3 truncate flex items-center gap-2 text-xs">
-              <div className="w-6 h-6 bg-gray-100 rounded-full flex items-center justify-center">
-                <span className="text-xs font-bold text-gray-600">{connection.username.charAt(0).toUpperCase()}</span>
-              </div>
               {connection.endpoint}
             </div>
             <div className="text-gray-600 p-3 px-3 truncate text-xs">{connection.username}</div>
