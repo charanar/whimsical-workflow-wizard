@@ -69,7 +69,7 @@ const PortalAccessLevelSection = () => {
         <div className="border-b border-gray-200">
           <div className="grid grid-cols-2 bg-[#49495b] text-white text-xs p-3">
             <div className="px-3 font-medium">NAME</div>
-            <div className="px-3 font-medium">NORMALIZED NAME</div>
+            <div className="px-3 font-medium">NORMALISED NAME</div>
           </div>
         </div>
         <CardContent className="p-0">
