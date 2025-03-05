@@ -1,19 +1,25 @@
-
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { ArrowLeft, Cog, Database, ExternalLink, Mail, Plus, Settings as SettingsIcon, Share2, Trash2, Users } from "lucide-react";
+import { ArrowLeft, Cog, Database, ExternalLink, Mail, Plus, Settings as SettingsIcon, Share2, Trash2, Users, Check, X, Circle, MoreVertical } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
 import { toast } from "sonner";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 // Mock data for IFS Access Provider connections with correct endpoint pattern
 const initialConnections = [
-  { id: 1, endpoint: "https://newifsendpoint.com/service1", username: "admin_user", integration: "Pandadoc" },
-  { id: 2, endpoint: "https://newifsendpoint.com/connect", username: "service_account", integration: "CompanyHouse" },
-  { id: 3, endpoint: "https://newifsendpoint.com/hooks", username: "api_user", integration: "SendInBlue" },
-  { id: 4, endpoint: "https://newifsendpoint.com/maps", username: "maps_service", integration: "GoogleMap" },
+  { id: 1, endpoint: "https://newifsendpoint.com/service1", username: "admin_user", integration: "Pandadoc", status: "active", condition: "online" },
+  { id: 2, endpoint: "https://newifsendpoint.com/connect", username: "service_account", integration: "CompanyHouse", status: "active", condition: "online" },
+  { id: 3, endpoint: "https://newifsendpoint.com/hooks", username: "api_user", integration: "SendInBlue", status: "deactivated", condition: "offline" },
+  { id: 4, endpoint: "https://newifsendpoint.com/maps", username: "maps_service", integration: "GoogleMap", status: "active", condition: "online" },
 ];
 
 const Settings = () => {
@@ -44,7 +50,9 @@ const Settings = () => {
       id: newId,
       endpoint: "https://newifsendpoint.com/newconnection",
       username: "new_user",
-      integration: "New Integration"
+      integration: "New Integration",
+      status: "active",
+      condition: "online"
     };
     setConnections([...connections, newConnection]);
     toast.success("New connection added");
@@ -87,7 +95,7 @@ const Settings = () => {
           </Link>
         </div>
       </div>
-
+      
       {/* Settings sidebar - narrower */}
       <div className="w-52 border-r border-gray-100 bg-gray-50">
         <div className="p-4">
@@ -236,44 +244,75 @@ const Settings = () => {
                 </Button>
               </div>
 
-              <Card className="border-0 shadow-lg rounded-xl overflow-hidden">
-                <div className="grid grid-cols-5 bg-[#062f4b] text-white font-medium p-4 text-sm">
-                  <div className="px-3 col-span-2">IFS ENDPOINT</div>
-                  <div className="px-3">USERNAME</div>
-                  <div className="px-3">PASSWORD</div>
-                  <div className="text-center px-3">ACTION</div>
+              <Card className="border border-gray-200 shadow-sm rounded-md overflow-hidden">
+                <div className="border-b border-gray-200">
+                  <div className="grid grid-cols-5 bg-white text-gray-500 text-sm p-4">
+                    <div className="px-3 col-span-2 font-medium">IFS ENDPOINT</div>
+                    <div className="px-3 font-medium">USERNAME</div>
+                    <div className="px-3 font-medium">STATUS</div>
+                    <div className="px-3 text-center font-medium">CONDITION</div>
+                  </div>
                 </div>
                 <CardContent className="p-0">
                   {connections.map((connection) => (
                     <div 
                       key={connection.id} 
-                      className="grid grid-cols-5 border-b border-gray-100 items-center hover:bg-gray-50 transition-colors"
+                      className="grid grid-cols-5 border-b border-gray-200 items-center hover:bg-gray-50 transition-colors"
                     >
-                      <div className="text-gray-800 font-medium p-4 px-3 col-span-2 truncate">{connection.endpoint}</div>
-                      <div className="text-gray-800 p-4 px-3 truncate">{connection.username}</div>
-                      <div className="p-4 px-3">
-                        <Input 
-                          type="password" 
-                          value="••••••••••••••••••" 
-                          readOnly 
-                          className="bg-gray-100 cursor-not-allowed border-gray-200 text-gray-500"
-                        />
+                      <div className="text-gray-800 font-medium p-4 px-3 col-span-2 truncate flex items-center gap-2">
+                        <div className="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center">
+                          <span className="text-xs font-bold text-gray-600">{connection.username.charAt(0).toUpperCase()}</span>
+                        </div>
+                        {connection.endpoint}
                       </div>
-                      <div className="flex items-center justify-center gap-2 p-4 px-3">
-                        <Button 
-                          onClick={() => handleTestConnection(connection.id)} 
-                          className="bg-[#33C3F0] hover:bg-[#1EAEDB] text-white font-medium rounded-md shadow-sm text-xs px-2 py-1 h-auto"
-                        >
-                          Test Connection
-                        </Button>
-                        <Button 
-                          onClick={() => handleDeleteConnection(connection.id)} 
-                          variant="destructive" 
-                          size="sm" 
-                          className="font-medium rounded-md p-1.5 h-auto w-auto"
-                        >
-                          <Trash2 size={16} />
-                        </Button>
+                      <div className="text-gray-600 p-4 px-3 truncate">{connection.username}</div>
+                      <div className="p-4 px-3">
+                        {connection.status === "active" ? (
+                          <span className="inline-flex items-center text-green-600">
+                            <Check size={16} className="mr-1" /> Active
+                          </span>
+                        ) : (
+                          <span className="inline-flex items-center text-red-500">
+                            <X size={16} className="mr-1" /> Deactivated
+                          </span>
+                        )}
+                      </div>
+                      <div className="p-4 px-3 flex items-center justify-between">
+                        <span className={`inline-flex items-center ${connection.condition === "online" ? "text-green-600" : "text-red-500"}`}>
+                          <Circle size={8} className="mr-1 fill-current" /> 
+                          {connection.condition === "online" ? "Online" : "Offline"}
+                        </span>
+                        <DropdownMenu>
+                          <DropdownMenuTrigger asChild>
+                            <Button variant="ghost" size="sm" className="h-8 w-8 p-0">
+                              <MoreVertical className="h-4 w-4" />
+                            </Button>
+                          </DropdownMenuTrigger>
+                          <DropdownMenuContent align="end" className="w-[200px]">
+                            <DropdownMenuItem onClick={() => handleTestConnection(connection.id)}>
+                              View details
+                            </DropdownMenuItem>
+                            <DropdownMenuItem>
+                              Item history
+                            </DropdownMenuItem>
+                            <DropdownMenuItem>
+                              Duplicate
+                            </DropdownMenuItem>
+                            <DropdownMenuItem>
+                              Set as admin
+                            </DropdownMenuItem>
+                            <DropdownMenuSeparator />
+                            <DropdownMenuItem>
+                              Edit item
+                            </DropdownMenuItem>
+                            <DropdownMenuItem 
+                              className="text-red-500 focus:text-red-500" 
+                              onClick={() => handleDeleteConnection(connection.id)}
+                            >
+                              Delete item
+                            </DropdownMenuItem>
+                          </DropdownMenuContent>
+                        </DropdownMenu>
                       </div>
                     </div>
                   ))}
