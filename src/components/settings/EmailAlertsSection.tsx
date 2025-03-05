@@ -100,6 +100,13 @@ const EmailAlertsSection = ({ showConfigView = false }: EmailAlertsSectionProps)
               <h2 className="text-xl font-semibold text-[#353acd]">Email Alerts</h2>
             </div>
             <p className="text-gray-500 text-xs ml-7">Create Email Alert Configuration</p>
+            <Button 
+              variant="outline"
+              onClick={handleBackToList}
+              className="mt-4 ml-7"
+            >
+              Back To List
+            </Button>
           </div>
 
           <Card className="border border-gray-200 shadow-sm rounded-md overflow-hidden w-full bg-gray-50">
@@ -157,15 +164,9 @@ const EmailAlertsSection = ({ showConfigView = false }: EmailAlertsSectionProps)
                 </div>
               </div>
 
-              <div className="mt-8 flex justify-end gap-4">
+              <div className="mt-8 flex justify-center">
                 <Button 
-                  variant="outline"
-                  onClick={handleBackToList}
-                >
-                  Back To List
-                </Button>
-                <Button 
-                  className="bg-[#062f4b] hover:bg-[#062f4b]/90 text-white px-8"
+                  className="bg-[#062f4b] hover:bg-[#062f4b]/90 text-white rounded-full px-32"
                   onClick={handleSave}
                 >
                   Save
