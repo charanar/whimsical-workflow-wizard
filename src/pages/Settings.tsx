@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "sonner";
@@ -8,7 +9,7 @@ import IFSProviderSection from "@/components/settings/IFSProviderSection";
 import PlaceholderSection from "@/components/settings/PlaceholderSection";
 import { Connection } from "@/components/settings/ConnectionsTable";
 
-// Mock data for IFS Access Provider connections with corrected endpoint pattern
+// Mock data for IFS Access Provider connections with consistent endpoint format
 const initialConnections = [
   { id: 1, endpoint: "www.newifsendpoint.com", username: "admin_user", integration: "Pandadoc", status: "active", condition: "online" },
   { id: 2, endpoint: "www.newifsendpoint.com", username: "service_account", integration: "CompanyHouse", status: "active", condition: "online" },
