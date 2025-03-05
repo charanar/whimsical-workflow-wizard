@@ -1,7 +1,23 @@
 
-import { Shield, Plus } from "lucide-react";
+import { Shield, Plus, MoreVertical } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
+import { Card, CardContent } from "@/components/ui/card";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 export interface AccessLevel {
   id: string;
@@ -19,6 +35,14 @@ const mockAccessLevels: AccessLevel[] = [
 const PortalAccessLevelSection = () => {
   const handleAddAccessLevel = () => {
     toast.success("Add access level functionality will be implemented here");
+  };
+
+  const handleEditAccessLevel = (id: string) => {
+    toast.info(`Editing access level with ID: ${id}`);
+  };
+
+  const handleDeleteAccessLevel = (id: string) => {
+    toast.info(`Deleting access level with ID: ${id}`);
   };
 
   return (
@@ -41,23 +65,52 @@ const PortalAccessLevelSection = () => {
         </Button>
       </div>
 
-      <div className="bg-amber-100 rounded-md overflow-hidden border border-amber-200">
-        <div className="grid grid-cols-2 p-4 bg-amber-200 text-amber-950 font-semibold text-sm">
-          <div>Name</div>
-          <div>Normalized Name</div>
+      <Card className="border border-gray-200 shadow-sm rounded-md overflow-hidden w-full">
+        <div className="border-b border-gray-200">
+          <div className="grid grid-cols-2 bg-[#49495b] text-white text-xs p-3">
+            <div className="px-3 font-medium">NAME</div>
+            <div className="px-3 font-medium">NORMALIZED NAME</div>
+          </div>
         </div>
-        <div>
-          {mockAccessLevels.map((level) => (
-            <div 
-              key={level.id} 
-              className="grid grid-cols-2 p-4 border-t border-amber-200 text-sm"
-            >
-              <div>{level.name}</div>
-              <div>{level.normalizedName}</div>
-            </div>
-          ))}
-        </div>
-      </div>
+        <CardContent className="p-0">
+          {mockAccessLevels.length > 0 ? (
+            mockAccessLevels.map((level) => (
+              <div 
+                key={level.id} 
+                className="grid grid-cols-2 border-b border-gray-200 items-center hover:bg-gray-50 transition-colors"
+              >
+                <div className="text-gray-800 font-medium p-3 px-3 truncate text-xs">
+                  {level.name}
+                </div>
+                <div className="text-gray-600 p-3 px-3 truncate text-xs flex items-center justify-between">
+                  {level.normalizedName}
+                  <DropdownMenu>
+                    <DropdownMenuTrigger asChild>
+                      <Button variant="ghost" size="sm" className="h-7 w-7 p-0">
+                        <MoreVertical className="h-3 w-3" />
+                      </Button>
+                    </DropdownMenuTrigger>
+                    <DropdownMenuContent align="end" className="w-[200px]">
+                      <DropdownMenuItem onClick={() => handleEditAccessLevel(level.id)}>
+                        Edit access level
+                      </DropdownMenuItem>
+                      <DropdownMenuSeparator />
+                      <DropdownMenuItem 
+                        className="text-red-500 focus:text-red-500" 
+                        onClick={() => handleDeleteAccessLevel(level.id)}
+                      >
+                        Delete access level
+                      </DropdownMenuItem>
+                    </DropdownMenuContent>
+                  </DropdownMenu>
+                </div>
+              </div>
+            ))
+          ) : (
+            <div className="text-center py-8 text-gray-500 text-sm">No access levels found</div>
+          )}
+        </CardContent>
+      </Card>
     </div>
   );
 };
