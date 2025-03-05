@@ -30,18 +30,13 @@ const Login = () => {
     
     setIsLoading(true);
     
-    // Simulate authentication
     try {
-      // This is a simple simulation - in a real app, you would connect to your auth backend
+      // Simulate authentication delay
       await new Promise(resolve => setTimeout(resolve, 1000));
       
-      // Success simulation - in a real implementation, check credentials against your backend
-      if (username === 'demo' && password === 'password') {
-        toast.success('Login successful');
-        navigate('/');
-      } else {
-        toast.error('Invalid credentials');
-      }
+      // Allow any username and password as long as they're not empty
+      toast.success('Login successful');
+      navigate('/');
     } finally {
       setIsLoading(false);
     }
