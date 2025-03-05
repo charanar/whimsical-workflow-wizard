@@ -70,10 +70,10 @@ const PortalAdminUsersSection = () => {
             />
           </div>
           <Button 
-            className="bg-[#062f4b] hover:bg-[#062f4b]/90 text-white"
+            className="bg-[#062f4b] hover:bg-[#062f4b]/90 text-white h-10 px-4 flex items-center gap-2"
             onClick={handleAddUser}
           >
-            <UserPlus size={16} className="mr-1.5" /> New
+            <Plus size={16} /> New
           </Button>
         </div>
       </div>

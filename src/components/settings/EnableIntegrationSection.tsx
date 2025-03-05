@@ -128,9 +128,9 @@ const EnableIntegrationSection = () => {
           <div className="pt-4 flex justify-center">
             <Button 
               onClick={handleSave}
-              className="bg-[#062f4b] hover:bg-[#062f4b]/90 text-white px-20"
+              className="bg-[#062f4b] hover:bg-[#062f4b]/90 text-white h-10 px-8 flex items-center gap-2"
             >
-              <Plus size={16} className="mr-1.5" /> Save
+              <Plus size={16} /> Save
             </Button>
           </div>
         </CardContent>

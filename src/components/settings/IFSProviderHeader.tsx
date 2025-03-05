@@ -20,10 +20,9 @@ const IFSProviderHeader = ({ onAddConnection }: IFSProviderHeaderProps) => {
       </div>
       <Button 
         onClick={onAddConnection} 
-        variant="outline"
-        className="border-[#07603a] text-[#07603a] hover:bg-[#07603a]/10 font-semibold px-4 py-2 rounded-md shadow-md text-sm"
+        className="bg-[#062f4b] hover:bg-[#062f4b]/90 text-white h-10 px-4 flex items-center gap-2"
       >
-        <Plus size={16} className="mr-1.5" /> New Connection
+        <Plus size={16} /> New Connection
       </Button>
     </div>
   );

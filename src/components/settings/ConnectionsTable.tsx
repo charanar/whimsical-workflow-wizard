@@ -63,7 +63,7 @@ const ConnectionsTable = ({ connections, onTestConnection, onDeleteConnection }:
               <Button 
                 variant="outline" 
                 size="sm" 
-                className="text-xs border-[#353acd] text-[#353acd] hover:bg-[#353acd]/10 h-7 px-2"
+                className="text-xs border-[#353acd] text-[#353acd] hover:bg-[#353acd]/10 h-7 px-3 flex items-center gap-1"
                 onClick={() => onTestConnection(connection.id)}
               >
                 Test Connection

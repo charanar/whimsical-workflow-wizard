@@ -135,10 +135,10 @@ const HistoryLogsConfigSection = () => {
 
           <div className="mt-8 flex justify-center">
             <Button 
-              className="bg-[#062f4b] hover:bg-[#062f4b]/90 text-white rounded-full px-32"
+              className="bg-[#062f4b] hover:bg-[#062f4b]/90 text-white h-10 px-8 flex items-center gap-2"
               onClick={handleSave}
             >
-              <Plus size={16} className="mr-1.5" /> Save
+              <Plus size={16} /> Save
             </Button>
           </div>
         </CardContent>
