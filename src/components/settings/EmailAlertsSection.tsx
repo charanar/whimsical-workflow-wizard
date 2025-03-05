@@ -1,3 +1,4 @@
+
 import { Mail, Settings } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -135,7 +136,7 @@ const EmailAlertsSection = () => {
                 <div className="md:col-span-2">
                   <Textarea 
                     className="min-h-[150px]" 
-                    defaultValue={`Hello,\nYou are receiving this alert because:\nMessage ${message} was failed due to error message\n${errormessage}\n\nThanks`}
+                    defaultValue={`Hello,\nYou are receiving this alert because:\nMessage \${messageContent} was failed due to error message\n\${errorMessage}\n\nThanks`}
                   />
                 </div>
 
