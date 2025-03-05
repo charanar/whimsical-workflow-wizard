@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { ArrowLeft, Cog, Database, ExternalLink, Mail, Plus, Settings as SettingsIcon, Share2, Trash2, Users } from "lucide-react";
@@ -223,14 +222,14 @@ const Settings = () => {
               <div className="flex justify-between items-center mb-5">
                 <div>
                   <h1 className="text-3xl font-bold flex items-center gap-3 text-[#1963ff]">
-                    <Database className="h-8 w-8 text-[#00c064]" />
+                    <Database className="h-8 w-8 text-[#4285f4]" />
                     IFS Access Provider
                   </h1>
                   <p className="text-gray-600 text-sm mt-2 ml-11">Configure your IFS access provider connections</p>
                 </div>
                 <Button 
                   onClick={handleAddConnection} 
-                  className="bg-[#00c064] hover:bg-[#00a855] text-white font-semibold px-5 py-2.5 rounded-md shadow-md"
+                  className="bg-[#4285f4] hover:bg-[#3367d6] text-white font-semibold px-5 py-2.5 rounded-md shadow-md"
                 >
                   <Plus size={18} className="mr-1.5" /> New Connection
                 </Button>
@@ -281,7 +280,7 @@ const Settings = () => {
               </Card>
               
               <div className="mt-5 text-sm text-gray-500 flex items-start gap-2">
-                <Mail className="h-4 w-4 mt-0.5 text-[#00c064]" />
+                <Mail className="h-4 w-4 mt-0.5 text-[#4285f4]" />
                 <p>You can add multiple connections to different IFS instances. Each connection can be linked to a specific integration.</p>
               </div>
             </div>
