@@ -1,5 +1,5 @@
 
-import { User, UserPlus, Search } from "lucide-react";
+import { User, UserPlus, Search, Plus } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent } from "@/components/ui/card";
@@ -57,22 +57,25 @@ const PortalAdminUsersSection = () => {
       </div>
 
       <div className="flex justify-between items-center mb-4">
-        <div className="relative max-w-sm">
-          <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-gray-500" />
-          <Input
-            type="text"
-            placeholder="Search..."
-            className="pl-8 h-10 w-[300px]"
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-          />
+        <div className="flex-1"></div>
+        <div className="flex items-center gap-4">
+          <div className="relative">
+            <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-gray-500" />
+            <Input
+              type="text"
+              placeholder="Search..."
+              className="pl-8 h-10 w-[300px]"
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+            />
+          </div>
+          <Button 
+            className="bg-[#062f4b] hover:bg-[#062f4b]/90 text-white"
+            onClick={handleAddUser}
+          >
+            <UserPlus size={16} className="mr-1.5" /> New
+          </Button>
         </div>
-        <Button 
-          className="bg-[#062f4b] hover:bg-[#062f4b]/90 text-white"
-          onClick={handleAddUser}
-        >
-          <UserPlus size={16} className="mr-1.5" /> New
-        </Button>
       </div>
 
       <PortalAdminUsersTable 
