@@ -1,7 +1,6 @@
 
 import { Mail } from "lucide-react";
 import HistoryAuditsTable, { AuditRecord } from "./HistoryAuditsTable";
-import { toast } from "sonner";
 
 interface HistoryAuditsSectionProps {
   auditRecords: AuditRecord[];
@@ -21,7 +20,7 @@ const HistoryAuditsSection = ({ auditRecords, onViewDetails }: HistoryAuditsSect
 
       <div className="mb-6">
         <HistoryAuditsTable 
-          auditRecords={auditRecords} 
+          auditRecords={[]} 
           onViewDetails={onViewDetails} 
         />
       </div>

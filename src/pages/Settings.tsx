@@ -19,22 +19,12 @@ const initialConnections = [
   { id: 4, endpoint: "https://newifsendpoint.com", username: "maps_service", integration: "GoogleMap", status: "active", condition: "online" },
 ];
 
-// Mock data for History Audits
-const initialAuditRecords = [
-  { id: 1, operationType: "Create", integrationScreen: "IFS Provider", oldValue: "-", newValue: "https://newifsendpoint.com", createdOn: "2023-06-01", modifiedOn: "2023-06-01" },
-  { id: 2, operationType: "Update", integrationScreen: "User Management", oldValue: "user_readonly", newValue: "user_admin", createdOn: "2023-06-02", modifiedOn: "2023-06-03" },
-  { id: 3, operationType: "Delete", integrationScreen: "Integration", oldValue: "Slack", newValue: "-", createdOn: "2023-06-04", modifiedOn: "2023-06-04" },
-  { id: 4, operationType: "Create", integrationScreen: "Email Alert", oldValue: "-", newValue: "alerts@example.com", createdOn: "2023-06-05", modifiedOn: "2023-06-05" },
-];
-
 const Settings = () => {
   const navigate = useNavigate();
   // Track the active category for highlighting in the sidebar
   const [activeCategory, setActiveCategory] = useState("ifs-provider");
   // For IFS connections data
   const [connections, setConnections] = useState<Connection[]>(initialConnections);
-  // For History Audits data
-  const [auditRecords, setAuditRecords] = useState<AuditRecord[]>(initialAuditRecords);
 
   const handleBackClick = () => {
     navigate('/');
@@ -97,7 +87,7 @@ const Settings = () => {
             />
           ) : activeCategory === "history-audits" ? (
             <HistoryAuditsSection 
-              auditRecords={auditRecords}
+              auditRecords={[]}
               onViewDetails={handleViewAuditDetails}
             />
           ) : (
