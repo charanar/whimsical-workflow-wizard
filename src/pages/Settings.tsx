@@ -8,6 +8,7 @@ import BackButton from "@/components/settings/BackButton";
 import IFSProviderSection from "@/components/settings/IFSProviderSection";
 import HistoryAuditsSection from "@/components/settings/HistoryAuditsSection";
 import HistoryLogsConfigSection from "@/components/settings/HistoryLogsConfigSection";
+import EmailAlertsSection from "@/components/settings/EmailAlertsSection";
 import PlaceholderSection from "@/components/settings/PlaceholderSection";
 import { Connection } from "@/components/settings/ConnectionsTable";
 import { AuditRecord } from "@/components/settings/HistoryAuditsTable";
@@ -93,6 +94,8 @@ const Settings = () => {
             />
           ) : activeCategory === "history-logs-config" ? (
             <HistoryLogsConfigSection />
+          ) : activeCategory === "email-alerts" ? (
+            <EmailAlertsSection />
           ) : (
             <PlaceholderSection />
           )}
