@@ -91,33 +91,33 @@ const Login = () => {
           <PandaDocLogo />
         </div>
         
-        {/* System icons from the image - replacing the previous system icons */}
+        {/* System icons - ensuring consistent size of 36px for all */}
         {/* Left side */}
         <div className="absolute left-[40%] top-[25%] text-[#403E43]/70">
-          <LayoutDashboard size={24} strokeWidth={1.5} />
+          <LayoutDashboard size={36} strokeWidth={1.5} />
         </div>
         <div className="absolute left-[30%] top-[45%] text-[#403E43]/70">
-          <MonitorSmartphone size={24} strokeWidth={1.5} />
+          <MonitorSmartphone size={36} strokeWidth={1.5} />
         </div>
         <div className="absolute left-[40%] top-[65%] text-[#403E43]/70">
-          <Users size={24} strokeWidth={1.5} />
+          <Users size={36} strokeWidth={1.5} />
         </div>
         <div className="absolute left-[30%] top-[85%] text-[#403E43]/70">
-          <Puzzle size={24} strokeWidth={1.5} />
+          <Puzzle size={36} strokeWidth={1.5} />
         </div>
         
         {/* Right side */}
         <div className="absolute right-[40%] top-[25%] text-[#403E43]/70">
-          <Puzzle size={24} strokeWidth={1.5} />
+          <Puzzle size={36} strokeWidth={1.5} />
         </div>
         <div className="absolute right-[30%] top-[45%] text-[#403E43]/70">
-          <Globe size={24} strokeWidth={1.5} />
+          <Globe size={36} strokeWidth={1.5} />
         </div>
         <div className="absolute right-[40%] top-[65%] text-[#403E43]/70">
-          <BarChart3 size={24} strokeWidth={1.5} />
+          <BarChart3 size={36} strokeWidth={1.5} />
         </div>
         <div className="absolute right-[30%] top-[85%] text-[#403E43]/70">
-          <FileText size={24} strokeWidth={1.5} />
+          <FileText size={36} strokeWidth={1.5} />
         </div>
       </div>
       
