@@ -211,7 +211,7 @@ const Settings = () => {
           {/* Back button */}
           <button 
             onClick={handleBackClick} 
-            className="mb-4 flex items-center text-[#1963ff] hover:text-[#0047ab] transition-colors"
+            className="mb-4 flex items-center text-[#1EAEDB] hover:text-[#0FA0CE] transition-colors"
           >
             <ArrowLeft className="mr-2" size={20} />
             <span className="font-medium">Back to Integrations</span>
@@ -221,22 +221,22 @@ const Settings = () => {
             <div>
               <div className="flex justify-between items-center mb-5">
                 <div>
-                  <h1 className="text-3xl font-bold flex items-center gap-3 text-[#1963ff]">
-                    <Database className="h-8 w-8 text-[#4285f4]" />
+                  <h1 className="text-3xl font-bold flex items-center gap-3 text-[#1EAEDB]">
+                    <Database className="h-8 w-8 text-[#33C3F0]" />
                     IFS Access Provider
                   </h1>
                   <p className="text-gray-600 text-sm mt-2 ml-11">Configure your IFS access provider connections</p>
                 </div>
                 <Button 
                   onClick={handleAddConnection} 
-                  className="bg-[#4285f4] hover:bg-[#3367d6] text-white font-semibold px-5 py-2.5 rounded-md shadow-md"
+                  className="bg-[#33C3F0] hover:bg-[#1EAEDB] text-white font-semibold px-5 py-2.5 rounded-md shadow-md"
                 >
                   <Plus size={18} className="mr-1.5" /> New Connection
                 </Button>
               </div>
 
               <Card className="border-0 shadow-lg rounded-xl overflow-hidden">
-                <div className="grid grid-cols-5 bg-gradient-to-r from-[#1963ff] to-[#0047ab] text-white font-medium p-4 text-sm">
+                <div className="grid grid-cols-5 bg-gradient-to-r from-[#1EAEDB] to-[#0FA0CE] text-white font-medium p-4 text-sm">
                   <div className="px-3 col-span-2">IFS ENDPOINT</div>
                   <div className="px-3">USERNAME</div>
                   <div className="px-3">PASSWORD</div>
@@ -261,7 +261,7 @@ const Settings = () => {
                       <div className="flex items-center justify-center gap-2 p-4 px-3">
                         <Button 
                           onClick={() => handleTestConnection(connection.id)} 
-                          className="bg-[#1963ff] hover:bg-[#0047ab] text-white font-medium rounded-md shadow-sm text-xs px-2 py-1 h-auto"
+                          className="bg-[#33C3F0] hover:bg-[#1EAEDB] text-white font-medium rounded-md shadow-sm text-xs px-2 py-1 h-auto"
                         >
                           Test Connection
                         </Button>
@@ -280,14 +280,14 @@ const Settings = () => {
               </Card>
               
               <div className="mt-5 text-sm text-gray-500 flex items-start gap-2">
-                <Mail className="h-4 w-4 mt-0.5 text-[#4285f4]" />
+                <Mail className="h-4 w-4 mt-0.5 text-[#33C3F0]" />
                 <p>You can add multiple connections to different IFS instances. Each connection can be linked to a specific integration.</p>
               </div>
             </div>
           ) : (
             <div className="bg-white rounded-lg border border-gray-200 p-8 shadow-md">
               <div className="flex flex-col items-center justify-center py-8">
-                <SettingsIcon className="h-16 w-16 text-[#1963ff] opacity-20 mb-4" />
+                <SettingsIcon className="h-16 w-16 text-[#1EAEDB] opacity-20 mb-4" />
                 <p className="text-gray-600 text-lg">
                   Select a setting category from the sidebar to configure your IFS integration settings.
                 </p>
