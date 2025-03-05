@@ -50,27 +50,41 @@ const Login = () => {
     <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-b from-white to-[#f7f9ff]">
       {/* Decorative vector elements */}
       <div className="fixed top-0 left-0 w-full h-full overflow-hidden pointer-events-none z-0">
+        {/* Background gradient orbs */}
         <div className="absolute -left-16 -top-16 w-64 h-64 rounded-full bg-gradient-to-r from-[#1963ff]/10 to-[#353acd]/10 blur-3xl" />
         <div className="absolute right-16 top-32 w-48 h-48 rounded-full bg-gradient-to-r from-[#50a5ff]/10 to-[#434ce8]/10 blur-3xl" />
         <div className="absolute bottom-20 -left-10 w-56 h-56 rounded-full bg-gradient-to-r from-[#50a5ff]/10 to-[#434ce8]/10 blur-3xl" />
         <div className="absolute -right-20 -bottom-20 w-72 h-72 rounded-full bg-gradient-to-r from-[#1963ff]/10 to-[#353acd]/10 blur-3xl" />
         
-        {/* Vector decorations - network nodes */}
-        <div className="absolute top-32 left-1/4 text-[#1963ff]/20 transform rotate-12">
-          <Network size={120} strokeWidth={1} />
+        {/* Integration pattern - left side */}
+        <div className="absolute left-[5%] top-[20%] flex flex-col gap-16">
+          <Network size={40} className="text-[#1963ff]/20" />
+          <Lock size={32} className="text-[#353acd]/15 ml-12" />
+          <Network size={28} className="text-[#50a5ff]/20 ml-4" />
+          <Key size={36} className="text-[#434ce8]/15 ml-16" />
+          <Network size={24} className="text-[#1963ff]/15" />
         </div>
-        <div className="absolute bottom-16 right-1/4 text-[#434ce8]/20 transform -rotate-12">
-          <Network size={100} strokeWidth={1} />
+        
+        {/* Integration pattern - right side */}
+        <div className="absolute right-[5%] top-[15%] flex flex-col gap-16">
+          <ShieldCheck size={36} className="text-[#434ce8]/15" />
+          <Network size={30} className="text-[#1963ff]/20 mr-12" />
+          <Lock size={28} className="text-[#353acd]/15 mr-4" />
+          <Network size={34} className="text-[#50a5ff]/20 mr-16" />
+          <Key size={26} className="text-[#1963ff]/15" />
         </div>
-        <div className="absolute bottom-32 left-1/5 text-[#50a5ff]/20 transform rotate-45">
-          <Lock size={50} strokeWidth={1} />
-        </div>
-        <div className="absolute top-1/4 right-32 text-[#353acd]/20 transform -rotate-15">
-          <Key size={60} strokeWidth={1} />
-        </div>
-        <div className="absolute bottom-1/4 right-40 text-[#1963ff]/20 transform rotate-30">
-          <ShieldCheck size={70} strokeWidth={1} />
-        </div>
+        
+        {/* Horizontal connector lines - top */}
+        <div className="absolute top-[15%] left-[20%] w-[60%] h-px bg-gradient-to-r from-transparent via-[#1963ff]/10 to-transparent" />
+        <div className="absolute top-[35%] left-[20%] w-[60%] h-px bg-gradient-to-r from-transparent via-[#353acd]/10 to-transparent" />
+        
+        {/* Horizontal connector lines - bottom */}
+        <div className="absolute bottom-[35%] left-[20%] w-[60%] h-px bg-gradient-to-r from-transparent via-[#434ce8]/10 to-transparent" />
+        <div className="absolute bottom-[15%] left-[20%] w-[60%] h-px bg-gradient-to-r from-transparent via-[#50a5ff]/10 to-transparent" />
+        
+        {/* Vertical connector lines */}
+        <div className="absolute top-[15%] left-[30%] w-px h-[70%] bg-gradient-to-b from-transparent via-[#1963ff]/10 to-transparent" />
+        <div className="absolute top-[15%] right-[30%] w-px h-[70%] bg-gradient-to-b from-transparent via-[#434ce8]/10 to-transparent" />
       </div>
       
       <div className="w-full max-w-md px-8 py-12 bg-white/90 backdrop-blur-md rounded-xl shadow-lg relative z-10 border border-[#f0f2ff]">
