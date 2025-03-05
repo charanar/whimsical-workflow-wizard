@@ -169,7 +169,7 @@ const EmailAlertsSection = ({ showConfigView = false }: EmailAlertsSectionProps)
                   className="bg-[#062f4b] hover:bg-[#062f4b]/90 text-white rounded-full px-32"
                   onClick={handleSave}
                 >
-                  <Plus size={16} className="mr-1.5" /> Save
+                  Save
                 </Button>
               </div>
             </CardContent>
