@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Eye, EyeOff, Network, Lock, Key, ShieldCheck, Database, ServerCog, HardDrive, Settings, Workflow, Plug2, FileCode, Cable, Circle, Dot } from 'lucide-react';
@@ -151,12 +150,6 @@ const Login = () => {
         <div className="absolute top-[10%] left-[25%] w-px h-[60%] bg-[#8E9196]/30" />
         <div className="absolute top-[10%] left-[50%] w-px h-[60%] bg-[#8E9196]/30" />
         <div className="absolute top-[10%] left-[75%] w-px h-[60%] bg-[#8E9196]/30" />
-        
-        {/* Diagonal connectors */}
-        <div className="absolute top-[10%] left-[10%] w-[15%] h-[25%] border-b border-l border-[#8E9196]/30 rounded-bl-full" />
-        <div className="absolute top-[10%] right-[10%] w-[15%] h-[25%] border-b border-r border-[#8E9196]/30 rounded-br-full" />
-        <div className="absolute bottom-[30%] left-[10%] w-[15%] h-[25%] border-t border-l border-[#8E9196]/30 rounded-tl-full" />
-        <div className="absolute bottom-[30%] right-[10%] w-[15%] h-[25%] border-t border-r border-[#8E9196]/30 rounded-tr-full" />
         
         {/* Integration company icons - gray single-color versions */}
         <div className="absolute left-[15%] top-[20%] transform scale-75 opacity-20 grayscale">
