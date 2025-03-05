@@ -1,14 +1,49 @@
+
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { ArrowLeft, Cog, ExternalLink, Settings as SettingsIcon, Share2, Users } from "lucide-react";
+import { ArrowLeft, Cog, Database, ExternalLink, Mail, Plus, Settings as SettingsIcon, Share2, Trash2, Users } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Badge } from "@/components/ui/badge";
+
+// Mock data for IFS Access Provider connections
+const initialConnections = [
+  { id: 1, endpoint: "https://newifsendpoint.com", username: "NewConnection", integration: "Pandadoc" },
+  { id: 2, endpoint: "https://newifsendpoint.com", username: "TestConnection", integration: "CompanyHouse" },
+  { id: 3, endpoint: "https://newifsendpoint.com", username: "TestConnection", integration: "SendInBlue" },
+  { id: 4, endpoint: "https://newifsendpoint.com", username: "TestConnection", integration: "GoogleMap" },
+];
 
 const Settings = () => {
   const navigate = useNavigate();
   // Track the active category for highlighting in the sidebar
   const [activeCategory, setActiveCategory] = useState("general");
+  // For IFS connections data
+  const [connections, setConnections] = useState(initialConnections);
 
   const handleBackClick = () => {
     navigate('/');
+  };
+
+  const handleTestConnection = (id) => {
+    console.log(`Testing connection ${id}`);
+    // In a real app, this would test the connection and provide feedback
+  };
+
+  const handleDeleteConnection = (id) => {
+    setConnections(connections.filter(conn => conn.id !== id));
+  };
+
+  const handleAddConnection = () => {
+    const newId = Math.max(...connections.map(c => c.id), 0) + 1;
+    const newConnection = {
+      id: newId,
+      endpoint: "https://newifsendpoint.com",
+      username: "NewConnection",
+      integration: "New Integration"
+    };
+    setConnections([...connections, newConnection]);
   };
 
   return (
@@ -72,7 +107,11 @@ const Settings = () => {
               <div className="ml-2 pl-4 border-l-2 border-[#1963ff] animate-fade-in">
                 <ul className="space-y-2 py-1">
                   <li>
-                    <a href="#" className="flex items-center text-sm text-gray-700 py-1.5 px-2 rounded hover:bg-gray-100 transition-colors duration-150 group">
+                    <a 
+                      href="#" 
+                      onClick={(e) => { e.preventDefault(); setActiveCategory("ifs-provider"); }}
+                      className="flex items-center text-sm text-gray-700 py-1.5 px-2 rounded hover:bg-gray-100 transition-colors duration-150 group"
+                    >
                       <span className="mr-1">•</span>
                       <span>IFS Access provider</span>
                       <ExternalLink className="ml-auto h-3 w-3 opacity-0 group-hover:opacity-100 transition-opacity" />
@@ -164,8 +203,8 @@ const Settings = () => {
       </div>
 
       {/* Main content area */}
-      <div className="flex-1 p-8">
-        <div className="max-w-4xl mx-auto">
+      <div className="flex-1 p-8 bg-slate-50">
+        <div className="max-w-6xl mx-auto">
           {/* Back button */}
           <button 
             onClick={handleBackClick} 
@@ -175,13 +214,78 @@ const Settings = () => {
             <span>Back to Integrations</span>
           </button>
           
-          <h1 className="text-3xl font-bold mb-8">Settings Dashboard</h1>
-          
-          <div className="bg-white rounded-lg border border-gray-200 p-6">
-            <p className="text-gray-600">
-              Select a setting category from the sidebar to configure your IFS integration settings.
-            </p>
-          </div>
+          {activeCategory === "ifs-provider" ? (
+            <div>
+              <div className="flex justify-between items-center mb-6">
+                <div>
+                  <h1 className="text-2xl font-bold flex items-center gap-2">
+                    <Mail className="h-6 w-6" />
+                    IFS Access Provider .Net
+                  </h1>
+                  <p className="text-gray-500 text-sm mt-1">Portal Access Management</p>
+                </div>
+                <Button onClick={handleAddConnection} className="bg-amber-500 hover:bg-amber-600">
+                  <Plus size={16} className="mr-1" /> New
+                </Button>
+              </div>
+
+              <Card className="border-0 shadow-sm overflow-hidden">
+                <div className="grid grid-cols-5 bg-amber-100 text-amber-900 font-medium p-4">
+                  <div>IFS endpoint</div>
+                  <div>User Name</div>
+                  <div>Password</div>
+                  <div>Integration</div>
+                  <div className="text-center">Test Connection</div>
+                </div>
+                <CardContent className="p-0">
+                  {connections.map((connection) => (
+                    <div 
+                      key={connection.id} 
+                      className="grid grid-cols-5 p-4 border-b border-gray-100 items-center hover:bg-gray-50"
+                    >
+                      <div className="text-gray-800">{connection.endpoint}</div>
+                      <div className="text-gray-800">{connection.username}</div>
+                      <div>
+                        <Input 
+                          type="password" 
+                          value="••••••••••••••••••••••••••••••••••••••••••••••" 
+                          readOnly 
+                          className="bg-gray-100 cursor-not-allowed"
+                        />
+                      </div>
+                      <div>
+                        <Badge variant="outline" className="bg-white border-gray-200 text-gray-700 hover:bg-white">
+                          {connection.integration}
+                        </Badge>
+                      </div>
+                      <div className="flex items-center justify-center gap-2">
+                        <Button 
+                          onClick={() => handleTestConnection(connection.id)} 
+                          className="bg-amber-800 hover:bg-amber-900 text-white text-sm"
+                        >
+                          Test IFS Connection
+                        </Button>
+                        <Button 
+                          onClick={() => handleDeleteConnection(connection.id)} 
+                          variant="destructive" 
+                          size="sm" 
+                          className="text-sm"
+                        >
+                          <Trash2 size={16} />
+                        </Button>
+                      </div>
+                    </div>
+                  ))}
+                </CardContent>
+              </Card>
+            </div>
+          ) : (
+            <div className="bg-white rounded-lg border border-gray-200 p-6">
+              <p className="text-gray-600">
+                Select a setting category from the sidebar to configure your IFS integration settings.
+              </p>
+            </div>
+          )}
         </div>
       </div>
     </div>
