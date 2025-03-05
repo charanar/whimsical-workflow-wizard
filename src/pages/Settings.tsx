@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { ArrowLeft, Cog, Database, ExternalLink, Mail, Plus, Settings as SettingsIcon, Share2, Trash2, Users } from "lucide-react";
@@ -10,10 +9,10 @@ import { toast } from "sonner";
 
 // Mock data for IFS Access Provider connections with more realistic endpoint URLs
 const initialConnections = [
-  { id: 1, endpoint: "https://api.ifs-service.com/v1", username: "admin_user", integration: "Pandadoc" },
-  { id: 2, endpoint: "https://ifs-connect.companyhub.io", username: "service_account", integration: "CompanyHouse" },
-  { id: 3, endpoint: "https://ifs-integration.sendinblue.com", username: "api_user", integration: "SendInBlue" },
-  { id: 4, endpoint: "https://maps.ifs-connector.com/api", username: "maps_service", integration: "GoogleMap" },
+  { id: 1, endpoint: "https://api.ifs-cloud.example.com/v2/services", username: "admin_user", integration: "Pandadoc" },
+  { id: 2, endpoint: "https://corporate-ifs.example.org/api/connect", username: "service_account", integration: "CompanyHouse" },
+  { id: 3, endpoint: "https://ifs-integration.example.io/v3/hooks", username: "api_user", integration: "SendInBlue" },
+  { id: 4, endpoint: "https://enterprise.ifs-services.example.net/maps", username: "maps_service", integration: "GoogleMap" },
 ];
 
 const Settings = () => {
@@ -42,7 +41,7 @@ const Settings = () => {
     const newId = Math.max(...connections.map(c => c.id), 0) + 1;
     const newConnection = {
       id: newId,
-      endpoint: "https://new-api.ifs-connect.com",
+      endpoint: "https://new-api.ifs-cloud.example.com/v1/connect",
       username: "new_user",
       integration: "New Integration"
     };
@@ -88,16 +87,16 @@ const Settings = () => {
         </div>
       </div>
 
-      {/* Settings sidebar */}
-      <div className="w-64 border-r border-gray-100 bg-gray-50">
-        <div className="p-6">
-          <h2 className="text-xl font-semibold mb-6 text-[#1963ff]">Settings</h2>
+      {/* Settings sidebar - reduced space between menu items */}
+      <div className="w-60 border-r border-gray-100 bg-gray-50">
+        <div className="p-5">
+          <h2 className="text-xl font-semibold mb-4 text-[#1963ff]">Settings</h2>
           
-          {/* General Section */}
-          <div className="mb-8">
+          {/* General Section - reduced vertical spacing */}
+          <div className="mb-6">
             <button 
               onClick={() => setActiveCategory("general")}
-              className={`flex items-center w-full mb-3 text-left px-3 py-2 rounded-lg transition-all ${
+              className={`flex items-center w-full mb-2 text-left px-3 py-2 rounded-lg transition-all ${
                 activeCategory === "general" 
                   ? "bg-[#1963ff] text-white font-medium shadow-md" 
                   : "text-gray-700 hover:bg-gray-200"
@@ -161,11 +160,11 @@ const Settings = () => {
             )}
           </div>
           
-          {/* Users Section */}
+          {/* Users Section - reduced vertical spacing */}
           <div>
             <button 
               onClick={() => setActiveCategory("users")}
-              className={`flex items-center w-full mb-3 text-left px-3 py-2 rounded-lg transition-all ${
+              className={`flex items-center w-full mb-2 text-left px-3 py-2 rounded-lg transition-all ${
                 activeCategory === "users" 
                   ? "bg-[#1963ff] text-white font-medium shadow-md" 
                   : "text-gray-700 hover:bg-gray-200"
@@ -206,13 +205,13 @@ const Settings = () => {
         </div>
       </div>
 
-      {/* Main content area - updated to use the full width and reduce margins */}
+      {/* Main content area - expanded to utilize full width */}
       <div className="flex-1 bg-slate-50">
-        <div className="mx-2 my-2 max-w-full">
+        <div className="mx-0 my-0 max-w-full">
           {/* Back button */}
           <button 
             onClick={handleBackClick} 
-            className="ml-4 mt-4 mb-6 flex items-center text-[#1963ff] hover:text-[#0047ab] transition-colors"
+            className="ml-4 mt-4 mb-4 flex items-center text-[#1963ff] hover:text-[#0047ab] transition-colors"
           >
             <ArrowLeft className="mr-2" size={20} />
             <span className="font-medium">Back to Integrations</span>
@@ -220,7 +219,7 @@ const Settings = () => {
           
           {activeCategory === "ifs-provider" ? (
             <div className="mx-4">
-              <div className="flex justify-between items-center mb-8">
+              <div className="flex justify-between items-center mb-6">
                 <div>
                   <h1 className="text-3xl font-bold flex items-center gap-3 text-[#1963ff]">
                     <Database className="h-8 w-8 text-[#00c064]" />
