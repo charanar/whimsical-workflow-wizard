@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Eye, EyeOff, LayoutDashboard, MonitorSmartphone, Users, PuzzlePiece, Globe, BarChart3, Folder, FileText } from 'lucide-react';
+import { Eye, EyeOff, LayoutDashboard, MonitorSmartphone, Users, Puzzle, Globe, BarChart3, Folder, FileText } from 'lucide-react';
 import CovalentHubLogo from '@/components/logos/CovalentHubLogo';
 import HubSpotLogo from '@/components/logos/HubSpotLogo';
 import PandaDocLogo from '@/components/logos/PandaDocLogo';
@@ -103,12 +103,12 @@ const Login = () => {
           <Users size={24} strokeWidth={1.5} />
         </div>
         <div className="absolute left-[30%] top-[85%] text-[#403E43]/70">
-          <PuzzlePiece size={24} strokeWidth={1.5} />
+          <Puzzle size={24} strokeWidth={1.5} />
         </div>
         
         {/* Right side */}
         <div className="absolute right-[40%] top-[25%] text-[#403E43]/70">
-          <PuzzlePiece size={24} strokeWidth={1.5} />
+          <Puzzle size={24} strokeWidth={1.5} />
         </div>
         <div className="absolute right-[30%] top-[45%] text-[#403E43]/70">
           <Globe size={24} strokeWidth={1.5} />
