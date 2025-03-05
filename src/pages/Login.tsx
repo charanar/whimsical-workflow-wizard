@@ -53,7 +53,7 @@ const Login = () => {
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-b from-white to-[#f7f9ff]">
-      {/* Network background with dots and connecting lines */}
+      {/* Network background with dots */}
       <div className="fixed top-0 left-0 w-full h-full overflow-hidden pointer-events-none z-0">
         {/* Background gradient orbs */}
         <div className="absolute -left-16 -top-16 w-64 h-64 rounded-full bg-gradient-to-r from-[#1963ff]/10 to-[#353acd]/10 blur-3xl" />
@@ -63,65 +63,65 @@ const Login = () => {
         
         {/* Network dots - top */}
         <div className="absolute left-[10%] top-[10%] text-[#8E9196]">
-          <Circle size={8} fill="#8E9196" />
+          <Circle size={10} fill="#8E9196" />
         </div>
         <div className="absolute left-[25%] top-[8%] text-[#8E9196]">
-          <Circle size={6} fill="#8E9196" />
+          <Circle size={10} fill="#8E9196" />
         </div>
         <div className="absolute left-[40%] top-[12%] text-[#8E9196]">
           <Circle size={10} fill="#8E9196" />
         </div>
         <div className="absolute left-[55%] top-[9%] text-[#8E9196]">
-          <Circle size={7} fill="#8E9196" />
+          <Circle size={10} fill="#8E9196" />
         </div>
         <div className="absolute left-[70%] top-[11%] text-[#8E9196]">
-          <Circle size={9} fill="#8E9196" />
+          <Circle size={10} fill="#8E9196" />
         </div>
         <div className="absolute left-[85%] top-[10%] text-[#8E9196]">
-          <Circle size={8} fill="#8E9196" />
+          <Circle size={10} fill="#8E9196" />
         </div>
         
         {/* Network dots - middle */}
         <div className="absolute left-[5%] top-[35%] text-[#8E9196]">
-          <Circle size={9} fill="#8E9196" />
+          <Circle size={10} fill="#8E9196" />
         </div>
         <div className="absolute left-[20%] top-[30%] text-[#8E9196]">
-          <Circle size={7} fill="#8E9196" />
+          <Circle size={10} fill="#8E9196" />
         </div>
         <div className="absolute left-[35%] top-[33%] text-[#8E9196]">
-          <Circle size={8} fill="#8E9196" />
+          <Circle size={10} fill="#8E9196" />
         </div>
         <div className="absolute left-[50%] top-[35%] text-[#8E9196]">
           <Circle size={10} fill="#8E9196" />
         </div>
         <div className="absolute left-[65%] top-[32%] text-[#8E9196]">
-          <Circle size={6} fill="#8E9196" />
+          <Circle size={10} fill="#8E9196" />
         </div>
         <div className="absolute left-[80%] top-[36%] text-[#8E9196]">
-          <Circle size={9} fill="#8E9196" />
+          <Circle size={10} fill="#8E9196" />
         </div>
         <div className="absolute left-[95%] top-[34%] text-[#8E9196]">
-          <Circle size={7} fill="#8E9196" />
+          <Circle size={10} fill="#8E9196" />
         </div>
         
         {/* Network dots - bottom */}
         <div className="absolute left-[8%] top-[65%] text-[#8E9196]">
-          <Circle size={8} fill="#8E9196" />
+          <Circle size={10} fill="#8E9196" />
         </div>
         <div className="absolute left-[22%] top-[70%] text-[#8E9196]">
           <Circle size={10} fill="#8E9196" />
         </div>
         <div className="absolute left-[38%] top-[68%] text-[#8E9196]">
-          <Circle size={7} fill="#8E9196" />
+          <Circle size={10} fill="#8E9196" />
         </div>
         <div className="absolute left-[52%] top-[72%] text-[#8E9196]">
-          <Circle size={9} fill="#8E9196" />
+          <Circle size={10} fill="#8E9196" />
         </div>
         <div className="absolute left-[68%] top-[67%] text-[#8E9196]">
-          <Circle size={6} fill="#8E9196" />
+          <Circle size={10} fill="#8E9196" />
         </div>
         <div className="absolute left-[82%] top-[71%] text-[#8E9196]">
-          <Circle size={8} fill="#8E9196" />
+          <Circle size={10} fill="#8E9196" />
         </div>
         <div className="absolute left-[94%] top-[66%] text-[#8E9196]">
           <Circle size={10} fill="#8E9196" />
@@ -129,27 +129,17 @@ const Login = () => {
         
         {/* Network dots - center area with system icons */}
         <div className="absolute left-[25%] top-[45%] text-[#8E9196]">
-          <Database size={14} />
+          <Database size={20} />
         </div>
         <div className="absolute left-[42%] top-[48%] text-[#8E9196]">
-          <ServerCog size={14} />
+          <ServerCog size={20} />
         </div>
         <div className="absolute left-[58%] top-[44%] text-[#8E9196]">
-          <Lock size={14} />
+          <Lock size={20} />
         </div>
         <div className="absolute left-[75%] top-[47%] text-[#8E9196]">
-          <Network size={14} />
+          <Network size={20} />
         </div>
-        
-        {/* Horizontal connector lines */}
-        <div className="absolute top-[10%] left-[10%] w-[75%] h-px bg-[#8E9196]/30" />
-        <div className="absolute top-[35%] left-[5%] w-[90%] h-px bg-[#8E9196]/30" />
-        <div className="absolute top-[70%] left-[8%] w-[86%] h-px bg-[#8E9196]/30" />
-        
-        {/* Vertical connector lines */}
-        <div className="absolute top-[10%] left-[25%] w-px h-[60%] bg-[#8E9196]/30" />
-        <div className="absolute top-[10%] left-[50%] w-px h-[60%] bg-[#8E9196]/30" />
-        <div className="absolute top-[10%] left-[75%] w-px h-[60%] bg-[#8E9196]/30" />
         
         {/* Integration company icons - gray single-color versions */}
         <div className="absolute left-[15%] top-[20%] transform scale-75 opacity-20 grayscale">
@@ -173,25 +163,25 @@ const Login = () => {
         
         {/* System icons - IFS related */}
         <div className="absolute left-[40%] top-[25%] text-[#8E9196]/70">
-          <ServerCog size={18} />
+          <ServerCog size={20} />
         </div>
         <div className="absolute right-[40%] bottom-[25%] text-[#8E9196]/70">
-          <HardDrive size={16} />
+          <HardDrive size={20} />
         </div>
         <div className="absolute left-[60%] top-[20%] text-[#8E9196]/70">
-          <Settings size={14} />
+          <Settings size={20} />
         </div>
         <div className="absolute right-[60%] bottom-[20%] text-[#8E9196]/70">
-          <Workflow size={16} />
+          <Workflow size={20} />
         </div>
         <div className="absolute left-[20%] top-[50%] text-[#8E9196]/70">
-          <FileCode size={14} />
+          <FileCode size={20} />
         </div>
         <div className="absolute right-[20%] top-[50%] text-[#8E9196]/70">
-          <Cable size={16} />
+          <Cable size={20} />
         </div>
         <div className="absolute left-[45%] bottom-[50%] text-[#8E9196]/70">
-          <Plug2 size={14} />
+          <Plug2 size={20} />
         </div>
       </div>
       
