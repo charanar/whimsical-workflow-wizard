@@ -80,8 +80,9 @@ const SettingsSidebar = ({ activeCategory, setActiveCategory }: SettingsSidebarP
               <li>
                 <a 
                   href="#" 
-                  onClick={(e) => e.preventDefault()}
-                  className="flex items-center text-xs text-gray-700 py-1.5 px-2 rounded hover:bg-gray-100 transition-colors duration-150 group"
+                  onClick={(e) => { e.preventDefault(); setActiveCategory("email-alert-config"); }}
+                  className={`flex items-center text-xs py-1.5 px-2 rounded transition-colors duration-150 group
+                    ${activeCategory === "email-alert-config" ? "bg-gray-200 text-[#1963ff] font-medium" : "text-gray-700 hover:bg-gray-100"}`}
                 >
                   <span className="mr-1 text-[#1963ff]">•</span>
                   <span>Email Alert Configuration</span>

@@ -13,7 +13,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 interface EmailAlert {
   id: number;
@@ -21,9 +21,18 @@ interface EmailAlert {
   alertName: string;
 }
 
-const EmailAlertsSection = () => {
-  const [showConfiguration, setShowConfiguration] = useState(false);
+interface EmailAlertsSectionProps {
+  showConfigView?: boolean;
+}
+
+const EmailAlertsSection = ({ showConfigView = false }: EmailAlertsSectionProps) => {
+  const [showConfiguration, setShowConfiguration] = useState(showConfigView);
   
+  // Update internal state when prop changes
+  useEffect(() => {
+    setShowConfiguration(showConfigView);
+  }, [showConfigView]);
+
   const handleSave = () => {
     toast.success("Email alert configuration saved successfully");
     setShowConfiguration(false);

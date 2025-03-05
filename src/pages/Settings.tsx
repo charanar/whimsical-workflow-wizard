@@ -95,7 +95,9 @@ const Settings = () => {
           ) : activeCategory === "history-logs-config" ? (
             <HistoryLogsConfigSection />
           ) : activeCategory === "email-alerts" ? (
-            <EmailAlertsSection />
+            <EmailAlertsSection showConfigView={false} />
+          ) : activeCategory === "email-alert-config" ? (
+            <EmailAlertsSection showConfigView={true} />
           ) : (
             <PlaceholderSection />
           )}
