@@ -1,3 +1,4 @@
+<lov-codelov-code>
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { ArrowLeft, Cog, Database, ExternalLink, Mail, Plus, Settings as SettingsIcon, Share2, Trash2, Users } from "lucide-react";
@@ -7,12 +8,12 @@ import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
 import { toast } from "sonner";
 
-// Mock data for IFS Access Provider connections with more realistic endpoint URLs
+// Mock data for IFS Access Provider connections with correct endpoint pattern
 const initialConnections = [
-  { id: 1, endpoint: "https://api.ifs-cloud.example.com/v2/services", username: "admin_user", integration: "Pandadoc" },
-  { id: 2, endpoint: "https://corporate-ifs.example.org/api/connect", username: "service_account", integration: "CompanyHouse" },
-  { id: 3, endpoint: "https://ifs-integration.example.io/v3/hooks", username: "api_user", integration: "SendInBlue" },
-  { id: 4, endpoint: "https://enterprise.ifs-services.example.net/maps", username: "maps_service", integration: "GoogleMap" },
+  { id: 1, endpoint: "https://newifsendpoint.com/service1", username: "admin_user", integration: "Pandadoc" },
+  { id: 2, endpoint: "https://newifsendpoint.com/connect", username: "service_account", integration: "CompanyHouse" },
+  { id: 3, endpoint: "https://newifsendpoint.com/hooks", username: "api_user", integration: "SendInBlue" },
+  { id: 4, endpoint: "https://newifsendpoint.com/maps", username: "maps_service", integration: "GoogleMap" },
 ];
 
 const Settings = () => {
@@ -41,7 +42,7 @@ const Settings = () => {
     const newId = Math.max(...connections.map(c => c.id), 0) + 1;
     const newConnection = {
       id: newId,
-      endpoint: "https://new-api.ifs-cloud.example.com/v1/connect",
+      endpoint: "https://newifsendpoint.com/newconnection",
       username: "new_user",
       integration: "New Integration"
     };
@@ -51,8 +52,8 @@ const Settings = () => {
 
   return (
     <div className="min-h-screen flex bg-white">
-      {/* Sidebar - same as in Index.tsx */}
-      <div className="w-16 bg-white backdrop-blur-sm flex flex-col items-center py-8 border-r border-gray-100 shadow-sm">
+      {/* Sidebar - significantly narrower */}
+      <div className="w-12 bg-white backdrop-blur-sm flex flex-col items-center py-8 border-r border-gray-100 shadow-sm">
         {/* Top logo */}
         <div className="mb-16">
           <img 
@@ -87,13 +88,13 @@ const Settings = () => {
         </div>
       </div>
 
-      {/* Settings sidebar - reduced space between menu items */}
-      <div className="w-60 border-r border-gray-100 bg-gray-50">
-        <div className="p-5">
+      {/* Settings sidebar - narrower */}
+      <div className="w-52 border-r border-gray-100 bg-gray-50">
+        <div className="p-4">
           <h2 className="text-xl font-semibold mb-4 text-[#1963ff]">Settings</h2>
           
           {/* General Section - reduced vertical spacing */}
-          <div className="mb-6">
+          <div className="mb-4">
             <button 
               onClick={() => setActiveCategory("general")}
               className={`flex items-center w-full mb-2 text-left px-3 py-2 rounded-lg transition-all ${
@@ -108,7 +109,7 @@ const Settings = () => {
             
             {activeCategory === "general" && (
               <div className="ml-2 pl-4 border-l-2 border-[#1963ff] animate-fade-in">
-                <ul className="space-y-2 py-1">
+                <ul className="space-y-1 py-1">
                   <li>
                     <a 
                       href="#" 
@@ -176,7 +177,7 @@ const Settings = () => {
             
             {activeCategory === "users" && (
               <div className="ml-2 pl-4 border-l-2 border-[#1963ff] animate-fade-in">
-                <ul className="space-y-2 py-1">
+                <ul className="space-y-1 py-1">
                   <li>
                     <a href="#" className="flex items-center text-sm text-gray-700 py-1.5 px-2 rounded hover:bg-gray-100 transition-colors duration-150 group">
                       <span className="mr-1 text-[#1963ff]">•</span>
@@ -207,19 +208,19 @@ const Settings = () => {
 
       {/* Main content area - expanded to utilize full width */}
       <div className="flex-1 bg-slate-50">
-        <div className="mx-0 my-0 max-w-full">
+        <div className="p-4 max-w-full">
           {/* Back button */}
           <button 
             onClick={handleBackClick} 
-            className="ml-4 mt-4 mb-4 flex items-center text-[#1963ff] hover:text-[#0047ab] transition-colors"
+            className="mb-4 flex items-center text-[#1963ff] hover:text-[#0047ab] transition-colors"
           >
             <ArrowLeft className="mr-2" size={20} />
             <span className="font-medium">Back to Integrations</span>
           </button>
           
           {activeCategory === "ifs-provider" ? (
-            <div className="mx-4">
-              <div className="flex justify-between items-center mb-6">
+            <div>
+              <div className="flex justify-between items-center mb-5">
                 <div>
                   <h1 className="text-3xl font-bold flex items-center gap-3 text-[#1963ff]">
                     <Database className="h-8 w-8 text-[#00c064]" />
@@ -237,10 +238,9 @@ const Settings = () => {
 
               <Card className="border-0 shadow-lg rounded-xl overflow-hidden">
                 <div className="grid grid-cols-5 bg-[#1963ff] text-white font-semibold p-4 text-sm">
-                  <div className="px-3">IFS ENDPOINT</div>
+                  <div className="px-3 col-span-2">IFS ENDPOINT</div>
                   <div className="px-3">USERNAME</div>
                   <div className="px-3">PASSWORD</div>
-                  <div className="px-3">INTEGRATION</div>
                   <div className="text-center px-3">ACTION</div>
                 </div>
                 <CardContent className="p-0">
@@ -249,8 +249,8 @@ const Settings = () => {
                       key={connection.id} 
                       className="grid grid-cols-5 border-b border-gray-100 items-center hover:bg-gray-50 transition-colors"
                     >
-                      <div className="text-gray-800 font-medium p-4 px-3">{connection.endpoint}</div>
-                      <div className="text-gray-800 p-4 px-3">{connection.username}</div>
+                      <div className="text-gray-800 font-medium p-4 px-3 col-span-2 truncate">{connection.endpoint}</div>
+                      <div className="text-gray-800 p-4 px-3 truncate">{connection.username}</div>
                       <div className="p-4 px-3">
                         <Input 
                           type="password" 
@@ -259,15 +259,10 @@ const Settings = () => {
                           className="bg-gray-100 cursor-not-allowed border-gray-200 text-gray-500"
                         />
                       </div>
-                      <div className="p-4 px-3">
-                        <Badge variant="outline" className="bg-white border-[#00c064] text-[#00c064] hover:bg-white px-3 py-1 font-medium">
-                          {connection.integration}
-                        </Badge>
-                      </div>
-                      <div className="flex items-center justify-center gap-3 p-4 px-3">
+                      <div className="flex items-center justify-center gap-2 p-4 px-3">
                         <Button 
                           onClick={() => handleTestConnection(connection.id)} 
-                          className="bg-[#1963ff] hover:bg-[#0047ab] text-white font-medium rounded-md shadow-sm"
+                          className="bg-[#1963ff] hover:bg-[#0047ab] text-white font-medium rounded-md shadow-sm text-xs px-2 py-1 h-auto"
                         >
                           Test Connection
                         </Button>
@@ -275,9 +270,9 @@ const Settings = () => {
                           onClick={() => handleDeleteConnection(connection.id)} 
                           variant="destructive" 
                           size="sm" 
-                          className="font-medium rounded-md p-2 h-auto w-auto"
+                          className="font-medium rounded-md p-1.5 h-auto w-auto"
                         >
-                          <Trash2 size={18} />
+                          <Trash2 size={16} />
                         </Button>
                       </div>
                     </div>
@@ -285,13 +280,13 @@ const Settings = () => {
                 </CardContent>
               </Card>
               
-              <div className="mt-6 text-sm text-gray-500 flex items-start gap-2">
+              <div className="mt-5 text-sm text-gray-500 flex items-start gap-2">
                 <Mail className="h-4 w-4 mt-0.5 text-[#00c064]" />
                 <p>You can add multiple connections to different IFS instances. Each connection can be linked to a specific integration.</p>
               </div>
             </div>
           ) : (
-            <div className="bg-white rounded-lg border border-gray-200 p-8 shadow-md mx-4">
+            <div className="bg-white rounded-lg border border-gray-200 p-8 shadow-md">
               <div className="flex flex-col items-center justify-center py-8">
                 <SettingsIcon className="h-16 w-16 text-[#1963ff] opacity-20 mb-4" />
                 <p className="text-gray-600 text-lg">
@@ -307,3 +302,4 @@ const Settings = () => {
 };
 
 export default Settings;
+</lov-code>
