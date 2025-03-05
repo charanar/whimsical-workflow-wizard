@@ -4,7 +4,6 @@ import CompanyCard from "@/components/CompanyCard";
 import { ArrowLeft, Cog, Search, Share2, User } from "lucide-react";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { Button } from "@/components/ui/button";
 
 const Index = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -79,28 +78,18 @@ const Index = () => {
               </p>
             </div>
             
-            {/* Search widget and login button container */}
-            <div className="flex flex-col sm:flex-row items-center gap-4">
-              {/* Search widget */}
-              <div className="relative w-full md:w-72">
-                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                  <Search className="h-5 w-5 text-[#707287]" />
-                </div>
-                <input
-                  type="text"
-                  className="bg-[#f7f7f8] border border-[#d8d9df] w-full pl-10 pr-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1963ff] focus:border-transparent"
-                  placeholder="Search integrations..."
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                />
+            {/* Search widget only - Login button removed */}
+            <div className="relative w-full md:w-72">
+              <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                <Search className="h-5 w-5 text-[#707287]" />
               </div>
-              
-              {/* Login button */}
-              <Link to="/login">
-                <Button variant="outline" className="border-[#1963ff] text-[#1963ff] hover:bg-[#1963ff] hover:text-white">
-                  Login
-                </Button>
-              </Link>
+              <input
+                type="text"
+                className="bg-[#f7f7f8] border border-[#d8d9df] w-full pl-10 pr-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1963ff] focus:border-transparent"
+                placeholder="Search integrations..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+              />
             </div>
           </div>
           
