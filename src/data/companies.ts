@@ -18,6 +18,7 @@ export interface Company {
 }
 
 export const companies: Company[] = [
+  // First row of active companies (4 cards)
   {
     id: "1",
     logo: PandaDocLogo,
@@ -50,12 +51,14 @@ export const companies: Company[] = [
     active: true,
     tags: [{ name: "Maps" }, { name: "Location" }]
   },
+  
+  // Second row with inactive companies (4 cards)
   {
     id: "8",
     logo: BrevoLogo,
     name: "Brevo",
     description: "Track the delivery of invoices and determine if customers have received or read the email.",
-    active: true,
+    active: false,
     tags: [{ name: "Email" }, { name: "Analytics" }]
   },
   {
