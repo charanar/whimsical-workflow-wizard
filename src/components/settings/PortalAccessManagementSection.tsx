@@ -50,7 +50,7 @@ const PortalAccessManagementSection = () => {
       <div className="flex justify-between items-center mb-4">
         <div className="flex-1"></div>
         <Button 
-          className="bg-[#f9a826] hover:bg-[#f9a826]/90 text-white h-10 px-4 flex items-center gap-2"
+          className="bg-[#062f4b] hover:bg-[#062f4b]/90 text-white h-10 px-4 flex items-center gap-2"
           onClick={handleAddAccessManagement}
         >
           <Plus size={16} /> New
@@ -59,7 +59,7 @@ const PortalAccessManagementSection = () => {
 
       <Card className="border border-gray-200 shadow-sm rounded-md overflow-hidden w-full">
         <div className="border-b border-gray-200">
-          <div className="grid grid-cols-2 bg-[#FEF7CD] text-gray-800 text-xs p-3">
+          <div className="grid grid-cols-2 bg-[#49495b] text-white text-xs p-3">
             <div className="px-3 font-medium">Name</div>
             <div className="px-3 font-medium">Roles</div>
           </div>

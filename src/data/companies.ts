@@ -5,6 +5,8 @@ import MicrosoftExchangeLogo from "@/components/logos/MicrosoftExchangeLogo";
 import PandaDocLogo from "@/components/logos/PandaDocLogo";
 import SalesforceLogo from "@/components/logos/SalesforceLogo";
 import HubSpotLogo from "@/components/logos/HubSpotLogo";
+import GoogleMapsLogo from "@/components/logos/GoogleMapsLogo";
+import BrevoLogo from "@/components/logos/BrevoLogo";
 
 export interface Company {
   id: string;
@@ -39,6 +41,22 @@ export const companies: Company[] = [
     description: "Seamless synchronisation of emails with IFS for better tracking of correspondences.",
     active: true,
     tags: [{ name: "Email" }, { name: "Communication" }]
+  },
+  {
+    id: "7",
+    logo: GoogleMapsLogo,
+    name: "Google Maps",
+    description: "Facilitates address verification using Google Maps within IFS applications.",
+    active: true,
+    tags: [{ name: "Maps" }, { name: "Location" }]
+  },
+  {
+    id: "8",
+    logo: BrevoLogo,
+    name: "Brevo",
+    description: "Track the delivery of invoices and determine if customers have received or read the email.",
+    active: false,
+    tags: [{ name: "Email" }, { name: "Analytics" }]
   },
   {
     id: "4",
