@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Eye, EyeOff, LayoutDashboard, MonitorSmartphone, Users, Puzzle, Globe, BarChart3, Folder, FileText } from 'lucide-react';
@@ -37,7 +38,7 @@ const Login = () => {
       
       // Allow any username and password as long as they're not empty
       toast.success('Login successful');
-      navigate('/');
+      navigate('/home');
     } finally {
       setIsLoading(false);
     }
