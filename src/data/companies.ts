@@ -55,7 +55,7 @@ export const companies: Company[] = [
     logo: BrevoLogo,
     name: "Brevo",
     description: "Track the delivery of invoices and determine if customers have received or read the email.",
-    active: false,
+    active: true,
     tags: [{ name: "Email" }, { name: "Analytics" }]
   },
   {

@@ -1,6 +1,7 @@
 
-import { User, Plus, MoreVertical } from "lucide-react";
+import { User, Plus, Search, MoreVertical } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 import { toast } from "sonner";
 import { Card, CardContent } from "@/components/ui/card";
 import {
@@ -10,6 +11,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { useState } from "react";
 
 export interface AccessManagement {
   id: string;
@@ -25,6 +27,9 @@ const mockAccessManagement: AccessManagement[] = [
 ];
 
 const PortalAccessManagementSection = () => {
+  const [accessManagement, setAccessManagement] = useState<AccessManagement[]>(mockAccessManagement);
+  const [searchTerm, setSearchTerm] = useState("");
+
   const handleAddAccessManagement = () => {
     toast.success("Add access management functionality will be implemented here");
   };
@@ -35,7 +40,13 @@ const PortalAccessManagementSection = () => {
 
   const handleDeleteAccessManagement = (id: string) => {
     toast.info(`Deleting access management with ID: ${id}`);
+    setAccessManagement(accessManagement.filter(item => item.id !== id));
   };
+
+  // Filter access management based on search term
+  const filteredAccessManagement = accessManagement.filter(item => 
+    item.name.toLowerCase().includes(searchTerm.toLowerCase())
+  );
 
   return (
     <div className="p-4">
@@ -49,24 +60,36 @@ const PortalAccessManagementSection = () => {
 
       <div className="flex justify-between items-center mb-4">
         <div className="flex-1"></div>
-        <Button 
-          className="bg-[#062f4b] hover:bg-[#062f4b]/90 text-white h-10 px-4 flex items-center gap-2"
-          onClick={handleAddAccessManagement}
-        >
-          <Plus size={16} /> New
-        </Button>
+        <div className="flex items-center gap-4">
+          <div className="relative">
+            <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-gray-500" />
+            <Input
+              type="text"
+              placeholder="Search..."
+              className="pl-8 h-10 w-[300px]"
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+            />
+          </div>
+          <Button 
+            className="bg-[#062f4b] hover:bg-[#062f4b]/90 text-white h-10 px-4 flex items-center gap-2"
+            onClick={handleAddAccessManagement}
+          >
+            <Plus size={16} /> New
+          </Button>
+        </div>
       </div>
 
       <Card className="border border-gray-200 shadow-sm rounded-md overflow-hidden w-full">
         <div className="border-b border-gray-200">
           <div className="grid grid-cols-2 bg-[#49495b] text-white text-xs p-3">
-            <div className="px-3 font-medium">Name</div>
-            <div className="px-3 font-medium">Roles</div>
+            <div className="px-3 font-medium">NAME</div>
+            <div className="px-3 font-medium">ROLES</div>
           </div>
         </div>
         <CardContent className="p-0">
-          {mockAccessManagement.length > 0 ? (
-            mockAccessManagement.map((item) => (
+          {filteredAccessManagement.length > 0 ? (
+            filteredAccessManagement.map((item) => (
               <div 
                 key={item.id} 
                 className="grid grid-cols-2 border-b border-gray-200 items-center hover:bg-gray-50 transition-colors"

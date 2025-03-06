@@ -53,7 +53,7 @@ const PortalAdminUsersTable = ({ users, onEdit, onDelete }: PortalAdminUsersTabl
                 </div>
               </div>
               <div className="text-gray-600 p-3 px-3 text-xs flex items-center justify-between">
-                {user.role}
+                <span>{user.role}</span>
                 <DropdownMenu>
                   <DropdownMenuTrigger asChild>
                     <Button variant="ghost" size="sm" className="h-7 w-7 p-0">
